@@ -2,6 +2,86 @@
 
 Build leaner webpages with `react-with-breakpoint`. 👌
 
+## How to use
+
+Use withBreakpoint as a utility component. Here is a basic example, how it can be used:
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import withBreakpoint from 'react-hide-at';
+import HideAt from 'react-hide-at';
+
+// This is how you can make an instance of withBreakpoint
+const HideAtWithBreakpoint = withBreakpoint(HideAt);
+
+ReactDOM.render(
+  // Hello world will hide on medium screen width and below
+  <HideAtWithBreakpoint breakpoint="mediumAndBelow">
+    <p>Hello world!</p>
+  </HideAtWithBreakpoint>,
+  document.getElementById('app')
+);
+
+```
+
+### Props
+List of props
+
+`breakpoints`: Takes an object, for overwriting the default breakpoint values, with following shape:
+
+```js
+const breakpoints = {
+  small: Number, // pixel
+  medium: Number, // pixel
+  large: Number // pixel
+}
+```
+
+**NOTE:** The shape of the object must look like the one above, otherwise the prop validation is going to fail❗️
+
+### Default breakpoint values
+I copied the breakpoint values, from [Airbnb's website](https://airbnb.com).
+
+Breakpoint | Value
+--- | ---
+small | 744
+medium | 1128
+large | `Infinity`
+
+### Overwriting the breakpoints
+
+You can overwrite the breakpoints simply by giving a `breakpoints` prop to the instance of `withBreakpoint`.
+Example:
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import withBreakpoint from 'react-hide-at';
+import HideAt from 'react-hide-at';
+
+// This is how you can make an instance of withBreakpoint
+const HideAtWithBreakpoint = withBreakpoint(HideAt);
+
+// Declare a constant and assign an object to it,
+// with the following properties:
+const breakpoints = {
+  small: 479,
+  medium: 768,
+  large: 1440
+};
+
+ReactDOM.render(
+  // Overwrite breakpoints here, by passing your breakpoints constant
+  <HideAtWithBreakpoint breakpoint="mediumAndBelow" breakpoints={ breakpoints }>
+    <p>Hello world!</p>
+  </HideAtWithBreakpoint>,
+  document.getElementById('app')
+);
+```
+
 ## Background story
 
 *Skip this section, if you aren't interested. See you at the technical details. 😉*
