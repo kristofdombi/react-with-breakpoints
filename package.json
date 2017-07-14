@@ -2,12 +2,19 @@
   "name": "react-with-breakpoints",
   "version": "0.0.1",
   "description": "Utility React component for altering the visual experience of responsive and lean webpages.",
-  "main": "index.js",
+  "main": "dist/withBreakpoint.js",
   "scripts": {
     "build": "npm run clean && mkdir -p ./dist && babel withBreakpoint.js --out-file dist/withBreakpoint.js",
-    "clean": "rm -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristof0425/react-with-breakpoint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kristof0425/react-with-breakpoint/issues"
+  },
+  "homepage": "https://github.com/kristof0425/react-with-breakpoint#readme",
   "author": "kristof0425",
   "license": "MIT",
   "devDependencies": {
@@ -17,5 +24,8 @@
     "babel-preset-react": "^6.24.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
   }
 }
