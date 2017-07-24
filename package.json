@@ -6,8 +6,8 @@
   "scripts": {
     "build": "npm run clean && mkdir -p ./dist && babel withBreakpoint.jsx --out-file dist/withBreakpoint.js",
     "clean": "rm -rf dist",
-    "eslint": "./node_modules/.bin/eslint withBreakpoint.jsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/eslint withBreakpoint.jsx",
+    "prepublish": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,25 @@
   "bugs": {
     "url": "https://github.com/kristof0425/react-with-breakpoint/issues"
   },
+  "keywords": [
+    "react",
+    "css",
+    "styles",
+    "display-none",
+    "toggle",
+    "utility-function",
+    "higher-order-component",
+    "airbnb",
+    "breakpoint",
+    "breakpoints",
+    "alter",
+    "ux",
+    "display",
+    "react-display"
+  ],
+  "files": [
+    "dist/withBreakpoint.js"
+  ],
   "homepage": "https://github.com/kristof0425/react-with-breakpoint#readme",
   "author": "kristof0425",
   "license": "MIT",
