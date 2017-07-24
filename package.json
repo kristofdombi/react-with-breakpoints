@@ -9,6 +9,14 @@
     "eslint": "./node_modules/.bin/eslint withBreakpoint.jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristof0425/react-with-breakpoint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kristof0425/react-with-breakpoint/issues"
+  },
+  "homepage": "https://github.com/kristof0425/react-with-breakpoint#readme",
   "author": "kristof0425",
   "license": "MIT",
   "devDependencies": {
@@ -23,5 +31,8 @@
     "eslint-plugin-react": "^7.1.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
   }
 }
