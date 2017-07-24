@@ -2,7 +2,7 @@
 
 Build leaner webpages with `react-with-breakpoint`. 👌
 
-##Install
+## Install
 
 NPM:
 `npm install react-with-breakpoint`
