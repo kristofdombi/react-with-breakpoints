@@ -1,6 +1,6 @@
 # react-with-breakpoint
 
-Build leaner webpages with `react-with-breakpoint`. 👌
+Build leaner webpages with `react-with-breakpoint` like Airbnb. 👌
 
 ## Install
 
