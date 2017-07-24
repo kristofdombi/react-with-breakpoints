@@ -32,6 +32,9 @@
     "display",
     "react-display"
   ],
+  "files": [
+    "dist/withBreakpoint.js"
+  ],
   "homepage": "https://github.com/kristof0425/react-with-breakpoint#readme",
   "author": "kristof0425",
   "license": "MIT",
