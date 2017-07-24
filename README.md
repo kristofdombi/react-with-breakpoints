@@ -2,6 +2,11 @@
 
 Build leaner webpages with `react-with-breakpoint`. 👌
 
+## Install
+
+NPM:
+`npm install react-with-breakpoint`
+
 ## How to use
 
 Use withBreakpoint as a utility component. Here is a basic example, how it can be used:
