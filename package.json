@@ -16,6 +16,22 @@
   "bugs": {
     "url": "https://github.com/kristof0425/react-with-breakpoint/issues"
   },
+  "keywords": [
+    "react",
+    "css",
+    "styles",
+    "display-none",
+    "toggle",
+    "utility-function",
+    "higher-order-component",
+    "airbnb",
+    "breakpoint",
+    "breakpoints",
+    "alter",
+    "ux",
+    "display",
+    "react-display"
+  ],
   "homepage": "https://github.com/kristof0425/react-with-breakpoint#readme",
   "author": "kristof0425",
   "license": "MIT",
