@@ -18,7 +18,6 @@ export default function withBreakpoint(WrappedComponent) {
     }
 
     componentDidMount() {
-      // eslint
       window.addEventListener('resize', this.handleResize);
       this.handleResize();
     }
