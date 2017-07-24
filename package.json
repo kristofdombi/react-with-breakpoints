@@ -6,8 +6,8 @@
   "scripts": {
     "build": "npm run clean && mkdir -p ./dist && babel withBreakpoint.jsx --out-file dist/withBreakpoint.js",
     "clean": "rm -rf dist",
-    "eslint": "./node_modules/.bin/eslint withBreakpoint.jsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/eslint withBreakpoint.jsx",
+    "prepublish": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
