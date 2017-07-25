@@ -13,9 +13,8 @@ Use withBreakpoint as a utility component. Here is a basic example, how it can b
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import withBreakpoint from 'react-hide-at';
+import withBreakpoint from 'react-with-breakpoint';
 import HideAt from 'react-hide-at';
 
 // This is how you can make an instance of withBreakpoint
@@ -62,9 +61,8 @@ Example:
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import withBreakpoint from 'react-hide-at';
+import withBreakpoint from 'react-with-breakpoint';
 import HideAt from 'react-hide-at';
 
 // This is how you can make an instance of withBreakpoint
