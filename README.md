@@ -1,11 +1,11 @@
-# react-with-breakpoint
+# react-with-breakpoints
 
-Build leaner webpages with `react-with-breakpoint` like Airbnb. 👌
+Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
 ## Install
 
 NPM:
-`npm install react-with-breakpoint`
+`npm install react-with-breakpoints`
 
 ## How to use
 
@@ -14,7 +14,7 @@ Use withBreakpoint as a utility component. Here is a basic example, how it can b
 ```js
 import React from 'react';
 
-import withBreakpoint from 'react-with-breakpoint';
+import withBreakpoint from 'react-with-breakpoints';
 import HideAt from 'react-hide-at';
 
 // This is how you can make an instance of withBreakpoint
@@ -62,7 +62,7 @@ Example:
 ```js
 import React from 'react';
 
-import withBreakpoint from 'react-with-breakpoint';
+import withBreakpoint from 'react-with-breakpoints';
 import HideAt from 'react-hide-at';
 
 // This is how you can make an instance of withBreakpoint
@@ -87,7 +87,7 @@ ReactDOM.render(
 
 <!-- ## Other resources
 
-`react-with-breakpoint` is a dependency of `HideAt` and `ShowAt`, a higher order component.
+`react-with-breakpoints` is a dependency of `HideAt` and `ShowAt`, a higher order component.
 
 `HideAt`
 
