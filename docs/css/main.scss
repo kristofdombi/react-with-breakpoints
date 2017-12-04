@@ -1,0 +1,22 @@
+@import "../../node_modules/normalize-scss/sass/normalize";
+@font-face {
+  font-family: Circular-Air-Bold;
+  src: url(../font/Circular_Air-Bold.woff2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Circular-Air-Bold;
+
+  .wrapper {
+    padding: 0 24px;
+    margin: 0 auto;
+
+    @media (min-width: 960px) {
+      padding: 0 80px;
+    }
+  }
+}
