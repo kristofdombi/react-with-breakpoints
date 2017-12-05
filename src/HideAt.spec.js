@@ -52,15 +52,6 @@ describe('<HideAt />', () => {
     assert.deepStrictEqual($.children().exists(), false);
   });
 
-  it('hides its children if breakpoint is largeAndBelow and currentBreakpoint is large', () => {
-    const $ = mount((
-      <HideAt breakpoint="largeAndBelow" currentBreakpoint="large">
-        <div>Hello</div>
-      </HideAt>
-    ));
-    assert.deepStrictEqual($.children().exists(), false);
-  });
-
   it('hides its children if breakpoint is mediumAndAbove and currentBreakpoint is large', () => {
     const $ = mount((
       <HideAt breakpoint="mediumAndAbove" currentBreakpoint="large">
