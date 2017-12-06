@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HideAt, ShowAt } from '../dist/react-with-breakpoints';
+import { HideAt, ShowAt } from '../src/react-with-breakpoints';
 
 import './css/main.scss';
 
