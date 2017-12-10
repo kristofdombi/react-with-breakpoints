@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withBreakpoint from './withBreakpoint';
+import withBreakpoints from './withBreakpoints';
 import setShouldRender from '../util/set-should-render';
 
 function ShowAt({ breakpoint, currentBreakpoint, children }) {
@@ -39,6 +39,6 @@ ShowAt.defaultProps = {
   children: null,
 };
 
-const ShowAtWithBreakpoint = withBreakpoint(ShowAt);
+const ShowAtWithBreakpoint = withBreakpoints(ShowAt);
 
 export default ShowAtWithBreakpoint;

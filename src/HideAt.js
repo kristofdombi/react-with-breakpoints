@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withBreakpoint from './withBreakpoint';
+import withBreakpoints from './withBreakpoints';
 import setShouldRender from '../util/set-should-render';
 
 function HideAt({ breakpoint, currentBreakpoint, children }) {
@@ -39,6 +39,6 @@ HideAt.defaultProps = {
   children: null,
 };
 
-const HideAtWithBreakpoint = withBreakpoint(HideAt);
+const HideAtWithBreakpoint = withBreakpoints(HideAt);
 
 export default HideAtWithBreakpoint;

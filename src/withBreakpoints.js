@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import airbnbBreakpoints from '../util/airbnb-breakpoints';
 
-export default function withBreakpoint(WrappedComponent) {
-  class WithBreakpoint extends PureComponent {
+export default function withBreakpoints(WrappedComponent) {
+  class WithBreakpoints extends PureComponent {
     state = {
       currentBreakpoint: '',
     }
@@ -45,10 +45,10 @@ export default function withBreakpoint(WrappedComponent) {
     || WrappedComponent.name
     || 'Component';
 
-  WithBreakpoint.WrappedComponent = WrappedComponent;
-  WithBreakpoint.displayName = `withBreakpoint(${wrappedComponentName})`;
+  WithBreakpoints.WrappedComponent = WrappedComponent;
+  WithBreakpoints.displayName = `withBreakpoint(${wrappedComponentName})`;
 
-  WithBreakpoint.propTypes = {
+  WithBreakpoints.propTypes = {
     breakpoints: PropTypes.shape({
       small: PropTypes.number.isRequired,
       medium: PropTypes.number.isRequired,
@@ -56,9 +56,9 @@ export default function withBreakpoint(WrappedComponent) {
     }),
   };
 
-  WithBreakpoint.defaultProps = {
+  WithBreakpoints.defaultProps = {
     breakpoints: airbnbBreakpoints,
   };
 
-  return WithBreakpoint;
+  return WithBreakpoints;
 }
