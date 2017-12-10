@@ -22,5 +22,6 @@ module.exports = {
   },
   devServer: {
     contentBase: docsPath,
+    disableHostCheck: true
   },
 };
