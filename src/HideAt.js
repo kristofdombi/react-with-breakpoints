@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import withBreakpoints from './withBreakpoints';
 import setShouldRender from '../util/set-should-render';
+import PropTypes from '../util/shared-propTypes';
 
 function HideAt({ breakpoint, currentBreakpoint, children }) {
   let shouldRender;
@@ -24,12 +24,7 @@ function HideAt({ breakpoint, currentBreakpoint, children }) {
   return null;
 }
 
-HideAt.propTypes = {
-  breakpoint: PropTypes.oneOf(['small', 'medium', 'mediumAndBelow', 'mediumAndAbove', 'large']).isRequired,
-  breakpoints: PropTypes.object,
-  currentBreakpoint: PropTypes.string,
-  children: PropTypes.node,
-};
+HideAt.propTypes = PropTypes;
 
 HideAt.displayName = 'HideAt';
 
