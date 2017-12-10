@@ -1,0 +1,23 @@
+// Padding, margin, border-radius
+$gutter-base: 15px;
+$border-radius-base: 4px;
+
+// Colors
+$primary-blue: #1191C8;
+$secondary-blue: #ABE3FB;
+$secondary-orange: #EA8301;
+
+$gradient-base: linear-gradient(34deg, #35A4D4 0%, #93D6F3 96%);
+
+$box-shadow-color-base: rgba(17, 145, 200,.3);
+
+$font-color-base: #555555;
+
+$snippet-background-color: #E5E5E5;
+
+// Font related vars
+$font-size-base: 14px;
+$font-size-code: 12px;
+
+// Box-shadow
+$box-shadow-base: 0 4px 10px 0 $box-shadow-color-base;

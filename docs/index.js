@@ -1,50 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HideAt, ShowAt } from '../src/react-with-breakpoints';
 // import { HideAt, ShowAt } from '../src/react-with-breakpoints';
+import Landing from './sections/landing';
+import Docs from './sections/docs';
+import Contribution from './sections/contribution';
+import ViewSlider from 'react-view-slider';
 
 import './css/main.scss';
 
-const HelloWorld = () => (
-  <div>
-    <h2>small</h2>
-    <HideAt breakpoint="small">
-      <h1 style={ { color: 'red' } }>small</h1>
-    </HideAt>
-    <ShowAt breakpoint="small">
-      <h1 style={ { color: 'green' } }>small</h1>
-    </ShowAt>
-    <h2>medium</h2>
-    <HideAt breakpoint="medium">
-      <h1 style={ { color: 'red' } }>medium</h1>
-    </HideAt>
-    <ShowAt breakpoint="medium">
-      <h1 style={ { color: 'green' } }>medium</h1>
-    </ShowAt>
-    <h2>mediumAndBelow</h2>
-    <HideAt breakpoint="mediumAndBelow">
-      <h1 style={ { color: 'red' } }>mediumAndBelow</h1>
-    </HideAt>
-    <ShowAt breakpoint="mediumAndBelow">
-      <h1 style={ { color: 'green' } }>mediumAndBelow</h1>
-    </ShowAt>
-    <h2>mediumAndAbove</h2>
-    <HideAt breakpoint="mediumAndAbove">
-      <h1 style={ { color: 'red' } }>mediumAndAbove</h1>
-    </HideAt>
-    <ShowAt breakpoint="mediumAndAbove">
-      <h1 style={ { color: 'green' } }>mediumAndAbove</h1>
-    </ShowAt>
-    <h2>large</h2>
-    <HideAt breakpoint="large">
-      <h1 style={ { color: 'red' } }>large</h1>
-    </HideAt>
-    <ShowAt breakpoint="large">
-      <h1 style={ { color: 'green' } }>large</h1>
-    </ShowAt>
-  </div>
-);
+class App extends React.PureComponent {
+  static displayName = 'App';
 
-HelloWorld.displayName = 'HelloWorld';
+  state = {
+    activeView: 0
+  }
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+  storySet = {
+    0: <Landing onChange={ () => this.setState({ activeView: 1 }) } />,
+    1: <Docs onChange={ (nextView) => this.setState({ activeView: nextView }) } />,
+    2: <Contribution onChange={ (nextView) => this.setState({ activeView: nextView }) } />,
+  }
+
+  renderView = ({ index, key, ref, style }) => (
+    <div key={ key } ref={ ref } style={ style }>
+      { this.storySet[index] }
+    </div>
+  )
+
+  render() {
+    return (
+      <div className="main-wrapper">
+        <ViewSlider
+          renderView={ this.renderView }
+          numViews={ Object.keys(this.storySet).length }
+          activeView={ this.state.activeView }
+        />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));

@@ -1,0 +1,24 @@
+.contribution {
+  padding: 0 20px 10px;
+
+  & > p:first-of-type {
+    margin-bottom: 0;
+  }
+
+  .review-needed {
+    background-color: #fbca04;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #000;
+    border-radius: 2px;
+    padding: 5px;
+  }
+
+  .steps {
+    margin: 2 * $gutter-base 0;
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

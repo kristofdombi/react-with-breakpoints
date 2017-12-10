@@ -1,0 +1,46 @@
+.docs {
+
+  .quote {
+    margin: 0 0 2 * $gutter-base;
+    padding-left: $gutter-base;
+    border-left: 4px solid $font-color-base;
+  }
+
+  .heading-2 {
+    margin-bottom: $gutter-base;
+  }
+
+  .component-list {
+    margin-bottom: 2 * $gutter-base;
+
+    ul {
+      padding-left: 20px;
+
+      li {
+        margin-bottom: $gutter-base;
+      }
+    }
+  }
+
+  .card .card-body > ul {
+    padding-left: $gutter-base;
+
+    & > li:not(:last-child) {
+      margin-bottom: $gutter-base;
+
+      .breakpoint-snippets {
+        margin: $gutter-base 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        .snippet {
+          margin: 0 $gutter-base / 3 $gutter-base / 3 0;
+        }
+      }
+
+      .note {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
