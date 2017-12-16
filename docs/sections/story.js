@@ -21,4 +21,8 @@ MyStory.propTypes = {
   onChange: func
 };
 
+MyStory.defaultProps = {
+  onChange: () => {}
+};
+
 export default MyStory;

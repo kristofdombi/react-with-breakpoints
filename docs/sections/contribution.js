@@ -35,4 +35,8 @@ Contribution.propTypes = {
   onChange: PropTypes.func
 };
 
+Contribution.defaultProps = {
+  onChange: () => {}
+};
+
 export default Contribution;
