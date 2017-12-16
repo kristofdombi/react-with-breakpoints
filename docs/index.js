@@ -34,6 +34,7 @@ class App extends React.PureComponent {
           renderView={ this.renderView }
           numViews={ Object.keys(this.storySet).length }
           activeView={ this.state.activeView }
+          fillParent
         />
       </div>
     );

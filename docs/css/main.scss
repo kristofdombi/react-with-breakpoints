@@ -52,6 +52,12 @@ body {
   .main-wrapper {
     margin: 0 auto;
 
+    // react-view-slider--fix
+    & > div > div > div {
+      overflow-y: scroll !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+
     @media (min-width: 960px) {
       padding: 0 80px;
     }
