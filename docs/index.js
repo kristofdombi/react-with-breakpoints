@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Landing from './sections/landing';
 import Docs from './sections/docs';
 import Contribution from './sections/contribution';
+import MyStory from './sections/story';
 import ViewSlider from 'react-view-slider';
 
 import './css/main.scss';
@@ -17,8 +18,9 @@ class App extends React.PureComponent {
 
   storySet = {
     0: <Landing onChange={ () => this.setState({ activeView: 1 }) } />,
-    1: <Docs onChange={ (nextView) => this.setState({ activeView: nextView }) } />,
-    2: <Contribution onChange={ (nextView) => this.setState({ activeView: nextView }) } />,
+    1: <Docs onChange={ nextView => this.setState({ activeView: nextView }) } />,
+    2: <Contribution onChange={ nextView => this.setState({ activeView: nextView }) } />,
+    3: <MyStory onChange={ nextView => this.setState({ activeView: nextView }) } />
   }
 
   renderView = ({ index, key, ref, style }) => (
