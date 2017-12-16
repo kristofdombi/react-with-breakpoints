@@ -1,0 +1,30 @@
+// shamlessly copied from here:
+// https://gist.github.com/dominiak/7856586
+
+@mixin triangle ($width: 15px, $direction: "down", $color: #333333) {
+	@if $direction == "up" {
+		width: 0;
+		height: 0;
+		border-left: $width / 2 solid transparent;
+		border-right: $width / 2 solid transparent;
+		border-bottom: $width / 2 solid $color;
+	} @else if $direction == "left" {
+		width: 0;
+		height: 0;
+		border-top: $width / 2 solid transparent;
+		border-bottom: $width / 2 solid transparent;
+		border-right: $width / 2 solid $color;
+	} @else if $direction == "right" {
+		width: 0;
+		height: 0;
+		border-top: $width / 2 solid transparent;
+		border-bottom: $width / 2 solid transparent;
+		border-left: $width / 2 solid $color;
+	} @else {
+		width: 0;
+		height: 0;
+		border-left: $width / 2 solid transparent;
+		border-right: $width / 2 solid transparent;
+		border-top: $width / 2 solid $color;
+	}
+}

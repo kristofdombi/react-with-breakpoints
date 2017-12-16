@@ -1,0 +1,33 @@
+.section {
+  padding: 0 20px 10px;
+
+  @media (min-width: 744px) {
+    margin: 0 auto 4 * $gutter-base;
+    max-width: 768px;
+  }
+
+  p {
+    margin-bottom: $gutter-base;
+  }
+
+  .card,
+  .note {
+    margin-bottom: 2 * $gutter-base;
+  }
+
+  .heading-1 {
+    margin: 2 * $gutter-base 0;
+  }
+
+  .button-wrapper {
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
+    margin: 0 auto;
+    padding: 2 * $gutter-base 0 2 * $gutter-base;
+
+    .button:not(:last-child) {
+      margin-right: 2 * $gutter-base;
+    }
+  }
+}

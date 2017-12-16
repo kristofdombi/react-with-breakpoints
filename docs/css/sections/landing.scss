@@ -1,0 +1,39 @@
+.landing {
+  padding: 0 20px 10px;
+
+  @media (min-width: 744px) {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .logo-wrapper {
+    margin: 4 * $gutter-base auto 0;
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+
+      &-text {
+        text-align: center;
+        font-size: 20px;
+        font-family: Circular-Air-Bold;
+        margin: 2 * $gutter-base 0 2 * $gutter-base;
+        color: #000;
+      }
+    }
+  }
+
+  .greeting {
+    text-align: center;
+    margin-bottom: 2 * $gutter-base;
+  }
+
+  .card {
+    margin-bottom: 4 * $gutter-base;
+  }
+
+  .button {
+    display: block;
+    margin: 0 auto;
+  }
+}

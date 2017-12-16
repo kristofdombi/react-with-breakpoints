@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="81px" viewBox="0 0 80 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>rects</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="30" height="59.375" rx="4"></rect>
+        <linearGradient x1="93.4840429%" y1="93.6391286%" x2="12.3518755%" y2="11.9570425%" id="linearGradient-3">
+            <stop stop-color="#1191C8" offset="0%"></stop>
+            <stop stop-color="#ABE3FB" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-4" x="0" y="0" width="44.6875" height="16.25" rx="4"></rect>
+        <rect id="path-6" x="0" y="0" width="44.6875" height="16.25" rx="4"></rect>
+        <rect id="path-8" x="0" y="0" width="44.6875" height="16.25" rx="4"></rect>
+        <rect id="path-10" x="0" y="0" width="80" height="16.25" rx="4"></rect>
+    </defs>
+    <g id="landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-148.000000, -136.000000)">
+        <g id="rects" transform="translate(148.000000, 136.000000)">
+            <g id="bg" transform="translate(50.000000, 21.562500)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                <rect fill="url(#linearGradient-3)" mask="url(#mask-2)" x="-96" y="-59.375" width="166.666667" height="156.5625"></rect>
+            </g>
+            <g id="bg" transform="translate(0.000000, 64.687500)">
+                <mask id="mask-5" fill="white">
+                    <use xlink:href="#path-4"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-4"></use>
+                <rect fill="url(#linearGradient-3)" mask="url(#mask-5)" x="-38.125" y="-102.5" width="156.25" height="156.5625"></rect>
+            </g>
+            <g id="bg" transform="translate(0.000000, 43.125000)">
+                <mask id="mask-7" fill="white">
+                    <use xlink:href="#path-6"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-6"></use>
+                <rect fill="url(#linearGradient-3)" mask="url(#mask-7)" x="-38.125" y="-80.9375" width="156.25" height="156.5625"></rect>
+            </g>
+            <g id="bg" transform="translate(0.000000, 21.562500)">
+                <mask id="mask-9" fill="white">
+                    <use xlink:href="#path-8"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-8"></use>
+                <rect fill="url(#linearGradient-3)" mask="url(#mask-9)" x="-38.125" y="-59.375" width="156.25" height="156.5625"></rect>
+            </g>
+            <g id="bg">
+                <mask id="mask-11" fill="white">
+                    <use xlink:href="#path-10"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-10"></use>
+                <rect fill="url(#linearGradient-3)" mask="url(#mask-11)" x="-38.125" y="-37.8125" width="156.25" height="156.5625"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
