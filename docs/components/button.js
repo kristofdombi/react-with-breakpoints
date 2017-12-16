@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classNames';
 
 const Button = (props) => (
   <button
-    className={ classNames('button', {
-      'neutral': props.neutral
-    }) }
+    className={ `button ${ props.neutral && 'neutral' }` }
     onClick={ props.onClick }
   >
     { props.children }

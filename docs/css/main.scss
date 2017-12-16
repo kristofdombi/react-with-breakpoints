@@ -6,6 +6,10 @@
 // Variables
 @import "./variables";
 
+// Mixins
+
+@import "./mixins";
+
 // Sections
 @import "./sections/section";
 @import "./sections/landing";
@@ -20,6 +24,7 @@
 @import "./components/snippet";
 @import "./components/note";
 @import "./components/step";
+@import "./components/table";
 
 * {
   box-sizing: border-box;

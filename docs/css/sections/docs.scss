@@ -22,14 +22,39 @@
     }
   }
 
-  .card .card-body > ul {
-    padding-left: $gutter-base;
+  .card .card-body > .Collapsible {
 
-    & > li:not(:last-child) {
-      margin-bottom: $gutter-base;
+    .Collapsible__trigger {
+      cursor: pointer;
+
+      .accordion-title {
+        display: flex;
+        align-items: center;
+
+        .triangle {
+          transition: all 0.3s ease-in-out;
+          margin: 0 $gutter-base - 5px 0 auto;
+          @include triangle($gutter-base, "down", $primary-blue);
+        }
+      }
+
+      &.is-open .accordion-title .triangle {
+        transform: rotate(180deg);
+      }
+    }
+
+    .Collapsible__contentInner {
+      padding-top: $gutter-base * 2;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .table .row .column-1 {
+        flex: 0.4;
+      }
 
       .breakpoint-snippets {
-        margin: $gutter-base 0;
         display: flex;
         flex-wrap: wrap;
 
@@ -37,10 +62,12 @@
           margin: 0 $gutter-base / 3 $gutter-base / 3 0;
         }
       }
+    }
 
-      .note {
-        margin-bottom: 0;
-      }
+    &:not(:last-child) {
+      margin-bottom: $gutter-base;
+      padding-bottom: $gutter-base;
+      border-bottom: 1px solid #EAEAEA;
     }
   }
 }

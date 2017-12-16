@@ -5,8 +5,18 @@ import { Heading1, Heading2 } from '../components/headings';
 import Snippet from '../components/snippet';
 import Card from '../components/card';
 import Note from '../components/note';
+import { Table, Row } from '../components/table';
 import Code, { BlueSyntax, OrangeSyntax, CommentSyntax } from '../components/code';
 import breakpointTypes from '../../util/breakpoint-types';
+import Collapsible from 'react-collapsible';
+
+const cubicBezier = 'cubic-bezier(.76,.06,.53,1.31)';
+
+// eslint-disable-next-line
+const AccordionTitle = ({ title }) => <div className="accordion-title">
+  <Snippet>{ title }</Snippet>
+  <div className="triangle" />
+</div>;
 
 const Docs = ({ onChange }) => (
   <div className="docs section">
@@ -64,20 +74,60 @@ const Docs = ({ onChange }) => (
       <p>As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types.</p>
       <p>Have a look at them:</p>
       <Card title="Props">
-        <ul>
-          <li>
-            <Snippet>breakpoint</Snippet> can be either:
-            <div className="breakpoint-snippets">
-              { breakpointTypes.map(breakpoint => <Snippet key={ breakpoint }>{ `"${breakpoint}"` }</Snippet>) }
-            </div>
-            <p>This prop is required prop!</p>
-          </li>
-          <li>
-            <Snippet>breakpoints</Snippet>:
-          </li>
-          <li><Snippet>currentBreakpoint</Snippet>:</li>
-          <li><Snippet>children</Snippet>:</li>
-        </ul>
+        <Collapsible trigger={ <AccordionTitle title="breakpoint" /> } easing={ cubicBezier }>
+          <Table>
+            <Row title="Type:">
+              <Snippet>String</Snippet>
+            </Row>
+            <Row title="Value:">
+              <div className="breakpoint-snippets">
+                { breakpointTypes.map(breakpoint => <Snippet key={ breakpoint }>{ `"${breakpoint}"` }</Snippet>) }
+              </div>
+            </Row>
+            <Row title="Description:">
+              You can set either one of the values to tell the component where to hide or show its children.
+            </Row>
+            <Row title="Required:">
+              <Snippet>true</Snippet>
+            </Row>
+          </Table>
+        </Collapsible>
+        <Collapsible trigger={ <AccordionTitle title="breakpoints" /> } easing={ cubicBezier }>
+          <Table>
+            <Row title="Type:">
+              <Snippet>Object</Snippet>
+            </Row>
+            <Row title="Value:">
+              <p>wow</p>
+            </Row>
+            <Row title="Description:">
+              <p>Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row.</p>
+            </Row>
+            <Row title="Required:">
+              <Snippet>false</Snippet>
+            </Row>
+          </Table>
+        </Collapsible>
+        <Collapsible trigger={ <AccordionTitle title="currentBreakpoint" /> } easing={ cubicBezier }>
+          <Table>
+            <Row title="Type:">
+              <Snippet>String</Snippet>
+            </Row>
+            <Row title="Value:">
+              <div className="breakpoint-snippets">
+                <Snippet>"small"</Snippet>
+                <Snippet>"medium"</Snippet>
+                <Snippet>"large"</Snippet>
+              </div>
+            </Row>
+            <Row title="Description:">
+              It's used by withBreakpoint. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt.
+            </Row>
+            <Row title="Required:">
+              <Snippet>false</Snippet>
+            </Row>
+          </Table>
+        </Collapsible>
       </Card>
     </div>
     <Heading2>ShowAt</Heading2>
