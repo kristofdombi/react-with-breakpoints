@@ -58,10 +58,10 @@ const Docs = ({ onChange }) => (
         </Code>
       </Card>
       <Note>
-        <p>Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen wdith described as a text eg.: small) from withBreakpoints. </p>
+        <p>Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen wdith described as a text eg.: small) from withBreakpoints.</p>
         <p>We’ll talk in a minute about what small, medium and large mean exactly.</p>
       </Note>
-      <p>As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types. </p>
+      <p>As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types.</p>
       <p>Have a look at them:</p>
       <Card title="Props">
         <ul>
@@ -70,7 +70,7 @@ const Docs = ({ onChange }) => (
             <div className="breakpoint-snippets">
               { breakpointTypes.map(breakpoint => <Snippet key={ breakpoint }>{ `"${breakpoint}"` }</Snippet>) }
             </div>
-              <p>This prop is required prop!</p>
+            <p>This prop is required prop!</p>
           </li>
           <li>
             <Snippet>breakpoints</Snippet>:

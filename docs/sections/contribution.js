@@ -7,7 +7,7 @@ import Step from '../components/step';
 const Contribution = ({ onChange }) => (
   <div className="contribution section">
     <Heading1>Contribution</Heading1>
-    <p>Although all kinds of contributions are welcome, I wouldn’t mind having a system for them. </p>
+    <p>Although all kinds of contributions are welcome, I wouldn't mind having a system for them.</p>
     <p className="bold">Please follow the instructions below, if you’re about to work on this project!</p>
     <div className="steps">
       <Step count={ 1 }>
