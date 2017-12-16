@@ -9,6 +9,7 @@ import { Table, Row } from '../components/table';
 import Code, { BlueSyntax, OrangeSyntax, CommentSyntax } from '../components/code';
 import breakpointTypes from '../../util/breakpoint-types';
 import Collapsible from 'react-collapsible';
+import { ShowAt } from '../../src/react-with-breakpoints';
 
 const cubicBezier = 'cubic-bezier(.76,.06,.53,1.31)';
 
@@ -27,13 +28,13 @@ const Docs = ({ onChange }) => (
     <div className="component-list">
       <Heading2>Component list</Heading2>
       <ul>
-        <li><Snippet>withBreakpoints</Snippet></li>
-        <li><Snippet>{ '<HideAt />' }</Snippet></li>
-        <li><Snippet>{ '<ShowAt />' }</Snippet></li>
+        <li><a href="#with-breakpoints"><Snippet>withBreakpoints</Snippet></a></li>
+        <li><a href="#hide-at"><Snippet>{ '<HideAt />' }</Snippet></a></li>
+        <li><a href="#show-at"><Snippet>{ '<ShowAt />' }</Snippet></a></li>
       </ul>
     </div>
-    <div className="withBreakpoints">
-      <Heading2>withBreakpoint</Heading2>
+    <div id="with-breakpoints" className="withBreakpoints">
+      <Heading2>withBreakpoints</Heading2>
       <p>It’s a <a href="https://reactjs.org/docs/higher-order-components.html" target="_blank" rel="noopener noreferrer">HOC</a> (higher order component), responsible for adding the scroll event listener and passing down the current breakpoint as a prop to its child.</p>
       <p>See in an example how you can use it:</p>
       <Card title="Example">
@@ -52,7 +53,7 @@ const Docs = ({ onChange }) => (
         </Code>
       </Card>
     </div>
-    <div className="HideAt">
+    <div id="hide-at" className="HideAt">
       <Heading2>HideAt</Heading2>
       <p>HideAt is a stateless function, which helps you make your DOM leaner. It hides its children, when the proper criterias are met.</p>
       <p>Let’s see it in action:</p>
@@ -130,11 +131,15 @@ const Docs = ({ onChange }) => (
         </Collapsible>
       </Card>
     </div>
-    <Heading2>ShowAt</Heading2>
-    <div className="button-wrapper">
-      <Button neutral onClick={ () => onChange(0) }>👈 Installation</Button>
-      <Button onClick={ () => onChange(2) }>Contribution 👉</Button>
+    <div id="show-at" className="ShowAt">
+      <Heading2>ShowAt</Heading2>
     </div>
+    <ShowAt breakpoint="small">
+      <div className="button-wrapper">
+        <Button neutral onClick={ () => onChange(0) }>👈 Installation</Button>
+        <Button onClick={ () => onChange(2) }>Contribution 👉</Button>
+      </div>
+    </ShowAt>
   </div>
 );
 

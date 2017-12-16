@@ -4,6 +4,7 @@ import Button from '../components/button';
 import Card from '../components/card';
 import Code, { OrangeSyntax, CommentSyntax } from '../components/code';
 import PropTypes from 'prop-types';
+import { ShowAt } from '../../src/react-with-breakpoints';
 
 const Landing = ({ onChange }) => (
   <div className="landing">
@@ -18,7 +19,9 @@ const Landing = ({ onChange }) => (
         ~ yarn add <OrangeSyntax>react-with-breakpoints</OrangeSyntax>
       </Code>
     </Card>
-    <Button onClick={ onChange }>Documentation 👉</Button>
+    <ShowAt breakpoint="small">
+      <Button onClick={ onChange }>Documentation 👉</Button>
+    </ShowAt>
   </div>
 );
 

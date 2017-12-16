@@ -1,6 +1,11 @@
 .section {
   padding: 0 20px 10px;
 
+  @media (min-width: 744px) {
+    margin: 0 auto 4 * $gutter-base;
+    max-width: 768px;
+  }
+
   p {
     margin-bottom: $gutter-base;
   }

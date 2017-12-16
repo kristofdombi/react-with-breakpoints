@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Heading1 } from '../components/headings';
 import Button from '../components/button';
 import Step from '../components/step';
+import { ShowAt } from '../../src/react-with-breakpoints';
 
 const Contribution = ({ onChange }) => (
   <div className="contribution section">
@@ -22,10 +23,12 @@ const Contribution = ({ onChange }) => (
     </div>
     <p>After this I'll review it personally and hopefully merge it as well.</p>
     <p>Happy coding! ☕️</p>
-    <div className="button-wrapper">
-      <Button neutral onClick={ () => onChange(1) }>👈 Documentation</Button>
-      <Button onClick={ () => onChange(3) }>Story 👉</Button>
-    </div>
+    <ShowAt breakpoint="small">
+      <div className="button-wrapper">
+        <Button neutral onClick={ () => onChange(1) }>👈 Documentation</Button>
+        <Button onClick={ () => onChange(3) }>Story 👉</Button>
+      </div>
+    </ShowAt>
   </div>
 );
 
