@@ -25,6 +25,7 @@
   .card .card-body > .Collapsible {
 
     .Collapsible__trigger {
+      cursor: pointer;
 
       .accordion-title {
         display: flex;
