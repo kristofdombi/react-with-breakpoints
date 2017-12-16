@@ -1,6 +1,11 @@
 .landing {
   padding: 0 20px 10px;
 
+  @media (min-width: 744px) {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
   .logo-wrapper {
     margin: 4 * $gutter-base auto 0;
 

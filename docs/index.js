@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { HideAt, ShowAt } from '../src/react-with-breakpoints';
+import { HideAt, ShowAt } from '../src/react-with-breakpoints';
 import Landing from './sections/landing';
 import Docs from './sections/docs';
 import Contribution from './sections/contribution';
@@ -32,12 +32,20 @@ class App extends React.PureComponent {
   render() {
     return (
       <div className="main-wrapper">
-        <ViewSlider
-          renderView={ this.renderView }
-          numViews={ Object.keys(this.storySet).length }
-          activeView={ this.state.activeView }
-          fillParent
-        />
+        <ShowAt breakpoint="small">
+          <ViewSlider
+            renderView={ this.renderView }
+            numViews={ Object.keys(this.storySet).length }
+            activeView={ this.state.activeView }
+            fillParent
+          />
+        </ShowAt>
+        <HideAt breakpoint="small">
+          <Landing />
+          <Docs />
+          <Contribution />
+          <MyStory />
+        </HideAt>
       </div>
     );
   }

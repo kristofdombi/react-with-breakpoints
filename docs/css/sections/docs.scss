@@ -52,6 +52,10 @@
 
       .table .row .column-1 {
         flex: 0.4;
+
+        @media (min-width: 744px) {
+          flex: 0.2;
+        }
       }
 
       .breakpoint-snippets {

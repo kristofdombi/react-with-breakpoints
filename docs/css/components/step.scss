@@ -3,7 +3,7 @@
   margin-bottom: $gutter-base;
 
   .step-count {
-    width: $gutter-base * 2;
+    min-width: $gutter-base * 2;
     height: $gutter-base * 2;
     border-radius: 50%;
     display: flex;
