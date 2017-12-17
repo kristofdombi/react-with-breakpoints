@@ -1,7 +1,12 @@
+const webpack = require('webpack');
 const path = require('path');
 const docsPath = path.resolve(__dirname, 'docs');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = {
+// eslint-disable-next-line
+const TARGET = process.env.TARGET || null;
+
+const config = {
   entry: path.resolve(docsPath, 'index.js'),
   output: {
     path: docsPath,
@@ -20,8 +25,24 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [],
   devServer: {
     contentBase: docsPath,
     disableHostCheck: true
   },
 };
+
+if (TARGET === 'production') {
+  config.plugins.push(
+    new UglifyJsPlugin({
+      test: /\.js($|\?)/i
+    })
+  );
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
+  );
+}
+
+module.exports = config;

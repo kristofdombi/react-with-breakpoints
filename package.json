@@ -8,7 +8,7 @@
     "prepublish": "npm run lint && npm run build",
     "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:lib": "babel src --out-dir lib",
-    "build:docs": "webpack",
+    "build:docs": "cross-env TARGET=production webpack",
     "build": "npm run build:docs && npm run build:lib && cross-env NODE_ENV=production webpack --config webpack.prod.config.js",
     "dev": "webpack-dev-server --open --hot --watch-content-base --progress --host 0.0.0.0",
     "postbuild": "cross-env NODE_ENV=production && cross-env TARGET=minify webpack --config webpack.prod.config.js",
