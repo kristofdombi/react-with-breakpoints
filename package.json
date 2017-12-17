@@ -42,7 +42,8 @@
     "react-show-at"
   ],
   "files": [
-    "dist/withBreakpoint.js"
+    "dist",
+    "lib"
   ],
   "homepage": "https://github.com/kristof0425/react-with-breakpoints#readme",
   "author": "Kristof Dombi <dombi.kristof@gmail.com> (http://kristofdombi.com/)",
