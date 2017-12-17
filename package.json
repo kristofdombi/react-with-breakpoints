@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src",
     "prepublish": "npm run lint && npm run build",
-    "test": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "jest --testPathPattern src/.* --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:lib": "babel src --out-dir lib",
     "build:docs": "cross-env TARGET=production webpack",
     "build": "npm run build:docs && npm run build:lib && cross-env NODE_ENV=production webpack --config webpack.prod.config.js",
