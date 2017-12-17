@@ -51,12 +51,14 @@ if (TARGET === 'minify') {
   config.output.sourceMapFilename = 'react-with-breakpoints.min.js';
   config.plugins.push(
     new UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-      mangle: {
-        except: ['React', 'ReactDOM', 'withBreakpoints'],
-      },
+      uglifyOptions: {
+        compress: {
+          warnings: false,
+        },
+        mangle: {
+          reserved: ['React', 'ReactDOM', 'withBreakpoints'],
+        },
+      }
     })
   );
 }
