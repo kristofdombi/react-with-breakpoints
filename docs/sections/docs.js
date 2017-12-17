@@ -99,7 +99,17 @@ const Docs = ({ onChange }) => (
               <Snippet>Object</Snippet>
             </Row>
             <Row title="Value:">
-              <p>wow</p>
+              <Code>
+                {'{'}
+                <br />
+                &nbsp;&nbsp;<BlueSyntax>small</BlueSyntax>: <Snippet>Number</Snippet>
+                <br />
+                &nbsp;&nbsp;<BlueSyntax>medium</BlueSyntax>: <Snippet>Number</Snippet>
+                <br />
+                &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: <Snippet>Number</Snippet>
+                <br />
+                {'}'}
+              </Code>
             </Row>
             <Row title="Description:">
               <p>Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row.</p>
