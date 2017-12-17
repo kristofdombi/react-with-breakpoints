@@ -77,6 +77,7 @@
     "react-view-slider": "^3.0.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^1.1.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
