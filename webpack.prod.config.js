@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const banner = require('./webpack.banner');
 //  eslint-disable-next-line
 const TARGET = process.env.TARGET || null;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const externals = {
   react: {
@@ -49,13 +50,15 @@ if (TARGET === 'minify') {
   config.output.filename = 'react-with-breakpoints.min.js';
   config.output.sourceMapFilename = 'react-with-breakpoints.min.js';
   config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-      mangle: {
-        except: ['React', 'ReactDOM', 'withBreakpoints'],
-      },
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+          warnings: false,
+        },
+        mangle: {
+          reserved: ['React', 'ReactDOM', 'withBreakpoints'],
+        },
+      }
     })
   );
 }
