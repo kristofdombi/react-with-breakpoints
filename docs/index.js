@@ -33,7 +33,6 @@ class App extends React.PureComponent {
                 viewsToShow={ 1 }
                 className="track"
                 swipe={ false }
-                // contain={ true }
               >
                 <View className="view">
                   <Landing onChange={ () => this.handleViewChange(1) } />
