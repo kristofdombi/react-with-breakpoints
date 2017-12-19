@@ -75,6 +75,7 @@
     "react-collapsible": "^2.0.3",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^16.2.0",
+    "react-view-pager": "^0.5.1",
     "react-view-slider": "^3.0.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",

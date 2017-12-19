@@ -5,40 +5,53 @@ import Landing from './sections/landing';
 import Docs from './sections/docs';
 import Contribution from './sections/contribution';
 import MyStory from './sections/story';
-import ViewSlider from 'react-view-slider';
+import { ViewPager, Frame, Track, View } from 'react-view-pager';
 
 import './css/main.scss';
 
 class App extends React.PureComponent {
   static displayName = 'App';
 
-  state = {
-    activeView: 0
+  handleViewChange = (nextView) => {
+    if (nextView !== 1) {
+      this.track.scrollTo(nextView);
+      window.scrollTo(0, 0);
+      return;
+    }
+    this.track.scrollTo(1);
+    window.scrollTo(0, 0);
   }
-
-  storySet = {
-    0: <Landing onChange={ () => this.setState({ activeView: 1 }) } />,
-    1: <Docs onChange={ nextView => this.setState({ activeView: nextView }) } />,
-    2: <Contribution onChange={ nextView => this.setState({ activeView: nextView }) } />,
-    3: <MyStory onChange={ nextView => this.setState({ activeView: nextView }) } />
-  }
-
-  renderView = ({ index, key, ref, style }) => (
-    <div key={ key } ref={ ref } style={ style }>
-      { this.storySet[index] }
-    </div>
-  )
 
   render() {
     return (
       <div className="main-wrapper">
         <ShowAt breakpoint="small">
-          <ViewSlider
-            renderView={ this.renderView }
-            numViews={ Object.keys(this.storySet).length }
-            activeView={ this.state.activeView }
-            fillParent
-          />
+          <ViewPager tag="main">
+            <Frame autoSize="height">
+              <Track
+                ref={ c => (this.track = c) }
+                viewsToShow={ 1 }
+                className="track"
+                swipe={ false }
+                // contain={ true }
+              >
+                <View className="view">
+                  <Landing onChange={ () => this.handleViewChange(1) } />
+                </View>
+                <View className="view">
+                  <Docs
+                    onChange={ nextView => this.handleViewChange(nextView) }
+                  />
+                </View>
+                <View className="view">
+                  <Contribution onChange={ nextView => this.handleViewChange(nextView) } />
+                </View>
+                <View className="view">
+                  <MyStory onChange={ nextView => this.handleViewChange(nextView) } />
+                </View>
+              </Track>
+            </Frame>
+          </ViewPager>
         </ShowAt>
         <HideAt breakpoint="small">
           <Landing />
