@@ -9,7 +9,7 @@ export default function withBreakpoints(WrappedComponent) {
     }
 
     componentDidMount() {
-      window.addEventListener('resize', this.handleResize);
+      window.addEventListener('resize', this.handleResize, { passive: true });
       this.handleResize();
     }
 
