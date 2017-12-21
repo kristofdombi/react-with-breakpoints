@@ -5,6 +5,7 @@
 # react-with-breakpoints
 
 [![Build Status](https://travis-ci.org/kristof0425/react-with-breakpoints.svg?branch=master)](https://travis-ci.org/kristof0425/react-with-breakpoints)
+[![Coverage Status](https://coveralls.io/repos/github/kristof0425/react-with-breakpoints/badge.svg?branch=master)](https://coveralls.io/github/kristof0425/react-with-breakpoints?branch=master)
 
 > Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
