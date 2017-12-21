@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/logo-with-text.png" />
+</p>
+
 # react-with-breakpoints
 
 Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
