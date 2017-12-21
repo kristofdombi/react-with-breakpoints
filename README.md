@@ -9,7 +9,7 @@
 
 > Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
-📖 [Documenation page]()
+📖 [Documenation page](https://kristof0425.github.io/react-with-breakpoints/)
 
 ## 🔧 Install
 
