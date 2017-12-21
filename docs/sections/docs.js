@@ -30,10 +30,10 @@ const Docs = ({ onChange }) => (
         import { '{ ' }<BlueSyntax>ShowAt</BlueSyntax>, <BlueSyntax>HideAt</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
         <br />
         const <BlueSyntax>myApp</BlueSyntax> = () => (<br />
-        &nbsp;&nbsp;{'<'}<BlueSyntax>ShowAt</BlueSyntax> breakpoint=“<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
+        &nbsp;&nbsp;{'<'}<BlueSyntax>ShowAt</BlueSyntax> breakpoint="<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
         &nbsp;&nbsp;&nbsp;&nbsp;{'<'}<BlueSyntax>div</BlueSyntax>{'>'}Hello World!{'</'}<BlueSyntax>div</BlueSyntax>{'>'}<br />
         &nbsp;&nbsp;{'</'}<BlueSyntax>ShowAt</BlueSyntax>{'>'}<br />
-        &nbsp;&nbsp;{'<'}<BlueSyntax>HideAt</BlueSyntax> breakpoint=“<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
+        &nbsp;&nbsp;{'<'}<BlueSyntax>HideAt</BlueSyntax> breakpoint="<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
         &nbsp;&nbsp;&nbsp;&nbsp;{'<'}<BlueSyntax>div</BlueSyntax>{'>'}Hola Mundo!{'</'}<BlueSyntax>div</BlueSyntax>{'>'}<br />
         &nbsp;&nbsp;{'</'}<BlueSyntax>HideAt</BlueSyntax>{'>'}<br />
         );
@@ -76,7 +76,7 @@ const Docs = ({ onChange }) => (
           import { '{ ' }<BlueSyntax>HideAt</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
           <br />
           const <BlueSyntax>myApp</BlueSyntax> = () => (<br />
-          &nbsp;&nbsp;{'<'}<BlueSyntax>HideAt</BlueSyntax> breakpoint=“<OrangeSyntax>small</OrangeSyntax>"><br />
+          &nbsp;&nbsp;{'<'}<BlueSyntax>HideAt</BlueSyntax> breakpoint="<OrangeSyntax>small</OrangeSyntax>"><br />
           &nbsp;&nbsp;&nbsp;&nbsp;{'<'}<BlueSyntax>div</BlueSyntax>{'>'}Hello World!{'</'}<BlueSyntax>div</BlueSyntax>{'>'}<br />
           &nbsp;&nbsp;{'</'}<BlueSyntax>HideAt</BlueSyntax>{'>'}<br />
           );
@@ -176,7 +176,7 @@ const Docs = ({ onChange }) => (
           import { '{ ' }<BlueSyntax>ShowAt</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
           <br />
           const <BlueSyntax>myApp</BlueSyntax> = () => (<br />
-          &nbsp;&nbsp;{'<'}<BlueSyntax>ShowAt</BlueSyntax> breakpoint=“<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
+          &nbsp;&nbsp;{'<'}<BlueSyntax>ShowAt</BlueSyntax> breakpoint="<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
           &nbsp;&nbsp;&nbsp;&nbsp;{'<'}<BlueSyntax>div</BlueSyntax>{'>'}Hello World!{'</'}<BlueSyntax>div</BlueSyntax>{'>'}<br />
           &nbsp;&nbsp;{'</'}<BlueSyntax>ShowAt</BlueSyntax>{'>'}<br />
           );
