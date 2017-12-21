@@ -87,19 +87,40 @@ As HideAt and ShowAt function the same way (they do the opposite things of each 
 | --------- | ---- | ----- | ------------- | ----------- | -------- |
 | `breakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
 | `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
-| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'large'` | It's used by withBreakpoint. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
+| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'large'` | - | It's used by withBreakpoint. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
 
 ### `<ShowAt />`
 
+ShowAt functions the opposite way as HideAt does. It reveals its children when the current breakpoint matches its breakpoint. (eg.: small, smallAndBelow)
+
+As said above, ShowAt and HideAt share the same `props` and `propTypes`, so please look at the prop descriptions at HideAt.
+
+```jsx
+import { ShowAt } from 'react-with-breakpoints';
+
+const myApp = () => (
+  <ShowAt breakpoint="mediumAndBelow">
+    <div>Hello World!</div>
+  </ShowAt>
+);
+```
+
 ## 💪 Contributions
 
-If you'd like to help, feel free to post an issue and have a discussion about your suggestions!
+Although all kinds of contributions are welcome, I wouldn't mind having a system for them.
+**Please follow the instructions below, if you’re about to work on this project!**
+
+1. If you find something, that bothers you about these modules, or you could improve them, please submit a new issue [here](https://github.com/kristof0425/react-with-breakpoints/issues).
+2. Fork react-with-breakpoints repository and create your changes in your repository.
+3. Create a pull request with the appropriate issue’s number you created (or you found solveable) and put **Review needed** label on it, if you feel like done with your work.
+
+After this I'll review it personally and hopefully merge it as well.
+
+Happy coding! ☕️
 
 ## 👏 Story
 
-**Skip this section, if you aren't interested.**
-
-As I was reading Adam Neary's article of [Rearchitecting Airbnb’s Frontend](https://medium.com/airbnb-engineering/rearchitecting-airbnbs-frontend-5e213efc24d2), two components caught my attention as a junior frontend developer. These were `HideAt` and `ShowAt`, these components seemed to me easy to 'reverse engineer' 🤓 for a rookie like me, but as it turned I needed to create a HOC as well to be able to share the above two with you, the react community. [Airbnb's website](https://aribnb.com) and the [React dev tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) helped me with inspiration along the way.
+I wrote a 4 min long story on Medium about what I learned along the way, when I created the first version of these three modules. It got published in [DailyJS](https://medium.com/dailyjs/i-open-sourced-3-modules-from-airbnb-614bc5a2a51d). 🤗
 
 ## ©️ Licence
 MIT
