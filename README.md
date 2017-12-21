@@ -4,108 +4,108 @@
 
 # react-with-breakpoints
 
-Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
+[![Build Status](https://travis-ci.org/kristof0425/react-with-breakpoints.svg?branch=master)](https://travis-ci.org/kristof0425/react-with-breakpoints)
 
-## Install
+> Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
-NPM:
-`npm install react-with-breakpoints`
+📖 [Documenation page]()
 
-## How to use
+## 🔧 Install
 
-Use withBreakpoint as a utility component. Here is a basic example, how it can be used:
+```bash
+npm install react-with-breakpoints
 
-```js
-import React from 'react';
+# or use yarn
 
-import withBreakpoint from 'react-with-breakpoints';
-import HideAt from 'react-hide-at';
-
-// This is how you can make an instance of withBreakpoint
-const HideAtWithBreakpoint = withBreakpoint(HideAt);
-
-ReactDOM.render(
-  // Hello world will hide on medium screen width and below
-  <HideAtWithBreakpoint breakpoint="mediumAndBelow">
-    <p>Hello world!</p>
-  </HideAtWithBreakpoint>,
-  document.getElementById('app')
-);
-
+yarn add react-with-breakpoints
 ```
 
-### Props
-List of props
+## 👈 Usage
 
-`breakpoints`: Takes an object, for overwriting the default breakpoint values, with following shape:
+```jsx
+import { ShowAt, HideAt } from 'react-with-breakpoints';
 
-```js
-const breakpoints = {
-  small: Number, // pixel
-  medium: Number, // pixel
-  large: Number // pixel
+const myApp = () => (
+  <div>
+    <ShowAt breakpoint=“mediumAndBelow">
+      <div>Hello World!</div>
+    </ShowAt>
+    <HideAt breakpoint=“mediumAndBelow">
+      <div>Hola Mundo!</div>
+    </HideAt>
+  </div>
+);
+```
+
+## ⚡️ Component list
+- `withBreakpoints`
+- `<HideAt />`
+- `<ShowAt />`
+
+### `withBreakpoints`
+
+It’s a [HOC](https://reactjs.org/docs/higher-order-components.html) (higher order component), responsible for adding the scroll event listener and passing down the current breakpoint as a prop to its child.
+
+See in an example how you can use it:
+
+```jsx
+import { withBreakpoints } from 'react-with-breakpoints';
+
+// just like in the source of HideAt,
+// you can put any component
+// as an argument of withBreakpoints
+
+const HelloWorld = () => <div>Hello World!</div>;
+
+const helloWithBreakpoints = withBreakpoints(HelloWorld);
+
+export default helloWithBreakpoints;
+```
+
+### `<HideAt />`
+
+HideAt is a stateless function, which helps you make your DOM leaner. It hides its children, when the proper criterias are met.
+
+Let’s see it in action:
+
+```jsx
+import { HideAt } from 'react-with-breakpoints';
+
+const myApp = () => (
+  <HideAt breakpoint=“small">
+    <div>Hello World!</div>
+  </HideAt>
+);
+```
+
+Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen wdith described as a text eg.: small) from withBreakpoints.
+
+**NOTE:**
+As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types.
+
+| Prop name | Type | Value | Default value | Description | Required |
+| --------- | ---- | ----- | ------------- | ----------- | -------- |
+| `breakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
+| `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): ```
+{
+  small: 744
+  medium: 1128
+  large: Infinity
 }
-```
+``` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
+| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'large'` | It's used by withBreakpoint. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
 
-**NOTE:** The shape of the object must look like the one above, otherwise the prop validation is going to fail❗️
+### `<ShowAt />`
 
-### Default breakpoint values
-I copied the breakpoint values, from [Airbnb's website](https://airbnb.com).
-
-Breakpoint | Value
---- | ---
-small | 744
-medium | 1128
-large | `Infinity`
-
-### Overwriting the breakpoints
-
-You can overwrite the breakpoints simply by giving a `breakpoints` prop to the instance of `withBreakpoint`.
-Example:
-
-```js
-import React from 'react';
-
-import withBreakpoint from 'react-with-breakpoints';
-import HideAt from 'react-hide-at';
-
-// This is how you can make an instance of withBreakpoint
-const HideAtWithBreakpoint = withBreakpoint(HideAt);
-
-// Declare a constant and assign an object to it,
-// with the following properties:
-const breakpoints = {
-  small: 479,
-  medium: 768,
-  large: 1440
-};
-
-ReactDOM.render(
-  // Overwrite breakpoints here, by passing your breakpoints constant
-  <HideAtWithBreakpoint breakpoint="mediumAndBelow" breakpoints={ breakpoints }>
-    <p>Hello world!</p>
-  </HideAtWithBreakpoint>,
-  document.getElementById('app')
-);
-```
-
-<!-- ## Other resources
-
-`react-with-breakpoints` is a dependency of `HideAt` and `ShowAt`, a higher order component.
-
-`HideAt`
-
-`ShowAt` -->
-
-## Contributions
+## 💪 Contributions
 
 If you'd like to help, feel free to post an issue and have a discussion about your suggestions!
 
-## Background story
+## 👏 Story
 
 **Skip this section, if you aren't interested.**
 
 As I was reading Adam Neary's article of [Rearchitecting Airbnb’s Frontend](https://medium.com/airbnb-engineering/rearchitecting-airbnbs-frontend-5e213efc24d2), two components caught my attention as a junior frontend developer. These were `HideAt` and `ShowAt`, these components seemed to me easy to 'reverse engineer' 🤓 for a rookie like me, but as it turned I needed to create a HOC as well to be able to share the above two with you, the react community. [Airbnb's website](https://aribnb.com) and the [React dev tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) helped me with inspiration along the way.
 
-## Licence
+## ©️ Licence
 MIT
