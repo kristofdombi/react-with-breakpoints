@@ -25,6 +25,20 @@ const Docs = ({ onChange }) => (
     <blockquote className="quote">
       react-with-breakpoints is a set of utility components for altering the user experience between various breakpoints.
     </blockquote>
+    <Card title="Usage">
+      <Code>
+        import { '{ ' }<BlueSyntax>ShowAt</BlueSyntax>, <BlueSyntax>HideAt</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
+        <br />
+        const <BlueSyntax>myApp</BlueSyntax> = () => (<br />
+        &nbsp;&nbsp;{'<'}<BlueSyntax>ShowAt</BlueSyntax> breakpoint=“<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{'<'}<BlueSyntax>div</BlueSyntax>{'>'}Hello World!{'</'}<BlueSyntax>div</BlueSyntax>{'>'}<br />
+        &nbsp;&nbsp;{'</'}<BlueSyntax>ShowAt</BlueSyntax>{'>'}<br />
+        &nbsp;&nbsp;{'<'}<BlueSyntax>HideAt</BlueSyntax> breakpoint=“<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;{'<'}<BlueSyntax>div</BlueSyntax>{'>'}Hola Mundo!{'</'}<BlueSyntax>div</BlueSyntax>{'>'}<br />
+        &nbsp;&nbsp;{'</'}<BlueSyntax>HideAt</BlueSyntax>{'>'}<br />
+        );
+      </Code>
+    </Card>
     <div className="component-list">
       <Heading2>Component list</Heading2>
       <ul>
@@ -37,7 +51,7 @@ const Docs = ({ onChange }) => (
       <Heading2>withBreakpoints</Heading2>
       <p>It’s a <a href="https://reactjs.org/docs/higher-order-components.html" target="_blank" rel="noopener noreferrer">HOC</a> (higher order component), responsible for adding the scroll event listener and passing down the current breakpoint as a prop to its child.</p>
       <p>See in an example how you can use it:</p>
-      <Card title="Example">
+      <Card title="Example - withBreakpoints">
         <Code>
           import { '{ ' }<BlueSyntax>withBreakpoints</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
           <br />
@@ -57,7 +71,7 @@ const Docs = ({ onChange }) => (
       <Heading2>HideAt</Heading2>
       <p>HideAt is a stateless function, which helps you make your DOM leaner. It hides its children, when the proper criterias are met.</p>
       <p>Let’s see it in action:</p>
-      <Card title="Example">
+      <Card title="Example - HideAt">
         <Code>
           import { '{ ' }<BlueSyntax>HideAt</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
           <br />
@@ -68,12 +82,10 @@ const Docs = ({ onChange }) => (
           );
         </Code>
       </Card>
+      <p>Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen wdith described as a text eg.: small) from withBreakpoints.</p>
       <Note>
-        <p>Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen wdith described as a text eg.: small) from withBreakpoints.</p>
-        <p>We’ll talk in a minute about what small, medium and large mean exactly.</p>
+        <p>As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types.</p>
       </Note>
-      <p>As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types.</p>
-      <p>Have a look at them:</p>
       <Card title="Props">
         <Collapsible trigger={ <AccordionTitle title="breakpoint" /> } easing={ cubicBezier }>
           <Table>
@@ -102,11 +114,25 @@ const Docs = ({ onChange }) => (
               <Code>
                 {'{'}
                 <br />
-                &nbsp;&nbsp;<BlueSyntax>small</BlueSyntax>: <Snippet>Number</Snippet>
+                &nbsp;&nbsp;<BlueSyntax>small</BlueSyntax>: Number
                 <br />
-                &nbsp;&nbsp;<BlueSyntax>medium</BlueSyntax>: <Snippet>Number</Snippet>
+                &nbsp;&nbsp;<BlueSyntax>medium</BlueSyntax>: Number
                 <br />
-                &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: <Snippet>Number</Snippet>
+                &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: Number
+                <br />
+                {'}'}
+              </Code>
+            </Row>
+            <Row title="Default value:">
+              <Code>
+                <CommentSyntax>// Coming from airbnbBreakpoints</CommentSyntax><br />
+                {'{'}
+                <br />
+                &nbsp;&nbsp;<BlueSyntax>small</BlueSyntax>: 744
+                <br />
+                &nbsp;&nbsp;<BlueSyntax>medium</BlueSyntax>: 1128
+                <br />
+                &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: <Snippet>Infinity</Snippet>
                 <br />
                 {'}'}
               </Code>
@@ -143,6 +169,19 @@ const Docs = ({ onChange }) => (
     </div>
     <div id="show-at" className="ShowAt">
       <Heading2>ShowAt</Heading2>
+      <p>ShowAt functions the opposite way as HideAt does. It reveals its children when the current breakpoint matches its breakpoint. (eg.: small, smallAndBelow)</p>
+      <p>As said above, ShowAt and HideAt share the same <Snippet>props</Snippet> and <Snippet>propTypes</Snippet>, so please look at the prop descriptions at HideAt.</p>
+      <Card title="Example - ShowAt">
+        <Code>
+          import { '{ ' }<BlueSyntax>ShowAt</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
+          <br />
+          const <BlueSyntax>myApp</BlueSyntax> = () => (<br />
+          &nbsp;&nbsp;{'<'}<BlueSyntax>ShowAt</BlueSyntax> breakpoint=“<OrangeSyntax>mediumAndBelow</OrangeSyntax>"><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{'<'}<BlueSyntax>div</BlueSyntax>{'>'}Hello World!{'</'}<BlueSyntax>div</BlueSyntax>{'>'}<br />
+          &nbsp;&nbsp;{'</'}<BlueSyntax>ShowAt</BlueSyntax>{'>'}<br />
+          );
+        </Code>
+      </Card>
     </div>
     <ShowAt breakpoint="small">
       <div className="button-wrapper">
