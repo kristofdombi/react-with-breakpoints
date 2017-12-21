@@ -1,0 +1,22 @@
+.step {
+  display: flex;
+  margin-bottom: $gutter-base;
+
+  .step-count {
+    min-width: $gutter-base * 2;
+    height: $gutter-base * 2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-blue;
+    color: #fff;
+    margin-right: $gutter-base;
+    background-image: $gradient-base;
+  }
+
+  .step-text {
+    // Full witdh - 2 * padding - step-count - step-count-margin
+    width: calc(100vw - 40px - 30px - #{$gutter-base});
+  }
+}

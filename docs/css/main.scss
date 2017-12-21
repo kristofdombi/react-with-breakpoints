@@ -1,0 +1,71 @@
+@import "../../node_modules/normalize-scss/sass/normalize";
+
+// Fonts
+@import "./font";
+
+// Variables
+@import "./variables";
+
+// Mixins
+
+@import "./mixins";
+
+// Sections
+@import "./sections/section";
+@import "./sections/landing";
+@import "./sections/docs";
+@import "./sections/contribution";
+@import "./sections/story";
+
+// Components
+@import "./components/button";
+@import "./components/card";
+@import "./components/code";
+@import "./components/headings";
+@import "./components/snippet";
+@import "./components/note";
+@import "./components/step";
+@import "./components/table";
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+h1, h2, h3, button, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+p {
+  line-height: 25px;
+}
+
+a {
+  color: $primary-blue;
+}
+
+body {
+  margin: 0;
+  font-family: Circular-Air-Book;
+  font-size: $font-size-base;
+  color: $font-color-base;
+
+  .main-wrapper {
+    margin: 0 auto;
+
+    // react-view-slider--fix
+    & > div > div > div > div {
+      overflow-y: scroll !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+
+    @media (min-width: 960px) {
+      padding: 0 80px;
+    }
+  }
+}

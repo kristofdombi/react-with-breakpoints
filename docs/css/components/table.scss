@@ -1,0 +1,20 @@
+.table {
+
+  .row {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: $gutter-base;
+    }
+
+    .column-1 {
+      color: $secondary-orange;
+      flex: 1;
+      margin-right: $gutter-base / 3;
+    }
+
+    .column-2 {
+      flex: 1;
+    }
+  }
+}

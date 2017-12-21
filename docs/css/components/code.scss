@@ -1,0 +1,23 @@
+.pre {
+  white-space: nowrap;
+  word-wrap: break-word;
+  overflow: auto;
+  margin: 0;
+
+  .code {
+    font-size: $font-size-code;
+    line-height: 20px;
+
+    .orange-syntax {
+      color: $secondary-orange;
+    }
+
+    .comment-syntax {
+      color: #6E6E6E;
+    }
+
+    .blue-syntax {
+      color: $primary-blue;
+    }
+  }
+}

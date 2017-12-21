@@ -1,0 +1,18 @@
+.card {
+  background-color: #fff;
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-base;
+  padding: 0 $gutter-base $gutter-base;
+
+  &-header {
+    color: $primary-blue;
+    font-size: 16px;
+    padding-top: $gutter-base;
+    padding-bottom: $gutter-base;
+    border-bottom: 1px solid rgba(17, 145, 200,.3);
+  }
+
+  &-body {
+    padding-top: $gutter-base;
+  }
+}

@@ -1,107 +1,126 @@
+<p align="center">
+  <img src="./assets/logo-with-text.png" />
+</p>
+
 # react-with-breakpoints
 
-Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
+[![Build Status](https://travis-ci.org/kristof0425/react-with-breakpoints.svg?branch=master)](https://travis-ci.org/kristof0425/react-with-breakpoints)
 
-## Install
+> Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
-NPM:
-`npm install react-with-breakpoints`
+📖 [Documenation page]()
 
-## How to use
+## 🔧 Install
 
-Use withBreakpoint as a utility component. Here is a basic example, how it can be used:
+```bash
+npm install react-with-breakpoints
 
-```js
-import React from 'react';
+# or use yarn
 
-import withBreakpoint from 'react-with-breakpoints';
-import HideAt from 'react-hide-at';
-
-// This is how you can make an instance of withBreakpoint
-const HideAtWithBreakpoint = withBreakpoint(HideAt);
-
-ReactDOM.render(
-  // Hello world will hide on medium screen width and below
-  <HideAtWithBreakpoint breakpoint="mediumAndBelow">
-    <p>Hello world!</p>
-  </HideAtWithBreakpoint>,
-  document.getElementById('app')
-);
-
+yarn add react-with-breakpoints
 ```
 
-### Props
-List of props
+## 👈 Usage
 
-`breakpoints`: Takes an object, for overwriting the default breakpoint values, with following shape:
+```jsx
+import { ShowAt, HideAt } from 'react-with-breakpoints';
 
-```js
-const breakpoints = {
-  small: Number, // pixel
-  medium: Number, // pixel
-  large: Number // pixel
-}
-```
-
-**NOTE:** The shape of the object must look like the one above, otherwise the prop validation is going to fail❗️
-
-### Default breakpoint values
-I copied the breakpoint values, from [Airbnb's website](https://airbnb.com).
-
-Breakpoint | Value
---- | ---
-small | 744
-medium | 1128
-large | `Infinity`
-
-### Overwriting the breakpoints
-
-You can overwrite the breakpoints simply by giving a `breakpoints` prop to the instance of `withBreakpoint`.
-Example:
-
-```js
-import React from 'react';
-
-import withBreakpoint from 'react-with-breakpoints';
-import HideAt from 'react-hide-at';
-
-// This is how you can make an instance of withBreakpoint
-const HideAtWithBreakpoint = withBreakpoint(HideAt);
-
-// Declare a constant and assign an object to it,
-// with the following properties:
-const breakpoints = {
-  small: 479,
-  medium: 768,
-  large: 1440
-};
-
-ReactDOM.render(
-  // Overwrite breakpoints here, by passing your breakpoints constant
-  <HideAtWithBreakpoint breakpoint="mediumAndBelow" breakpoints={ breakpoints }>
-    <p>Hello world!</p>
-  </HideAtWithBreakpoint>,
-  document.getElementById('app')
+const myApp = () => (
+  <div>
+    <ShowAt breakpoint="mediumAndBelow">
+      <div>Hello World!</div>
+    </ShowAt>
+    <HideAt breakpoint="mediumAndBelow">
+      <div>Hola Mundo!</div>
+    </HideAt>
+  </div>
 );
 ```
 
-<!-- ## Other resources
+## ⚡️ Component list
+- `withBreakpoints`
+- `<HideAt />`
+- `<ShowAt />`
 
-`react-with-breakpoints` is a dependency of `HideAt` and `ShowAt`, a higher order component.
+### `withBreakpoints`
 
-`HideAt`
+It’s a [HOC](https://reactjs.org/docs/higher-order-components.html) (higher order component), responsible for adding the scroll event listener and passing down the current breakpoint as a prop to its child.
 
-`ShowAt` -->
+See in an example how you can use it:
 
-## Contributions
+```jsx
+import { withBreakpoints } from 'react-with-breakpoints';
 
-If you'd like to help, feel free to post an issue and have a discussion about your suggestions!
+// just like in the source of HideAt,
+// you can put any component
+// as an argument of withBreakpoints
 
-## Background story
+const HelloWorld = () => <div>Hello World!</div>;
 
-**Skip this section, if you aren't interested.**
+const helloWithBreakpoints = withBreakpoints(HelloWorld);
 
-As I was reading Adam Neary's article of [Rearchitecting Airbnb’s Frontend](https://medium.com/airbnb-engineering/rearchitecting-airbnbs-frontend-5e213efc24d2), two components caught my attention as a junior frontend developer. These were `HideAt` and `ShowAt`, these components seemed to me easy to 'reverse engineer' 🤓 for a rookie like me, but as it turned I needed to create a HOC as well to be able to share the above two with you, the react community. [Airbnb's website](https://aribnb.com) and the [React dev tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) helped me with inspiration along the way.
+export default helloWithBreakpoints;
+```
 
-## Licence
+### `<HideAt />`
+
+HideAt is a stateless function, which helps you make your DOM leaner. It hides its children, when the proper criterias are met.
+
+Let’s see it in action:
+
+```jsx
+import { HideAt } from 'react-with-breakpoints';
+
+const myApp = () => (
+  <HideAt breakpoint="small">
+    <div>Hello World!</div>
+  </HideAt>
+);
+```
+
+Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen wdith described as a text eg.: small) from withBreakpoints.
+
+**NOTE:**
+As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types.
+
+| Prop name | Type | Value | Default value | Description | Required |
+| --------- | ---- | ----- | ------------- | ----------- | -------- |
+| `breakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
+| `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
+| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'large'` | - | It's used by withBreakpoints. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
+
+### `<ShowAt />`
+
+ShowAt functions the opposite way as HideAt does. It reveals its children when the current breakpoint matches its breakpoint. (eg.: small, smallAndBelow)
+
+As said above, ShowAt and HideAt share the same `props` and `propTypes`, so please look at the prop descriptions at HideAt.
+
+```jsx
+import { ShowAt } from 'react-with-breakpoints';
+
+const myApp = () => (
+  <ShowAt breakpoint="mediumAndBelow">
+    <div>Hello World!</div>
+  </ShowAt>
+);
+```
+
+## 💪 Contributions
+
+Although all kinds of contributions are welcome, I wouldn't mind having a system for them.
+**Please follow the instructions below, if you’re about to work on this project!**
+
+1. If you find something, that bothers you about these modules, or you could improve them, please submit a new issue [here](https://github.com/kristof0425/react-with-breakpoints/issues).
+2. Fork react-with-breakpoints repository and create your changes in your repository.
+3. Create a pull request with the appropriate issue’s number you created (or you found solveable) and put **Review needed** label on it, if you feel like done with your work.
+
+After this I'll review it personally and hopefully merge it as well.
+
+Happy coding! ☕️
+
+## 👏 Story
+
+I wrote a 4 min long story on Medium about what I learned along the way, when I created the first version of these three modules. It got published in [DailyJS](https://medium.com/dailyjs/i-open-sourced-3-modules-from-airbnb-614bc5a2a51d). 🤗
+
+## ©️ Licence
 MIT
