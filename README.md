@@ -86,9 +86,9 @@ As HideAt and ShowAt function the same way (they do the opposite things of each 
 
 | Prop name | Type | Value | Default value | Description | Required |
 | --------- | ---- | ----- | ------------- | ----------- | -------- |
-| `breakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
+| `breakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
 | `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
-| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'mediium'`, `'large'` | - | It's used by withBreakpoints. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
+| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'large'` | - | It's used by withBreakpoints. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
 
 ### `<ShowAt />`
 
