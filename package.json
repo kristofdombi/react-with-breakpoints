@@ -2,7 +2,7 @@
   "name": "react-with-breakpoints",
   "version": "2.0.0",
   "description": "Utility React component for altering the visual experience of responsive and lean webpages.",
-  "main": "dist/withBreakpoint.js",
+  "main": "dist/react-with-breakpoints.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src",
     "prepublish": "npm run lint && npm run build",
