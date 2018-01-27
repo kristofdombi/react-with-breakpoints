@@ -28,7 +28,7 @@ export default function withBreakpoints(WrappedComponent) {
         this.setState({
           currentBreakpoint: 'medium',
         });
-      } else if (clientWidth <= breakpoints.large) {
+      } else if (clientWidth <= breakpoints.large || clientWidth > breakpoints.large) {
         this.setState({
           currentBreakpoint: 'large',
         });
