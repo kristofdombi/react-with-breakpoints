@@ -1,5 +1,5 @@
 import React from 'react';
-import withBreakpoints from './withBreakpoints';
+import { withBreakpoints } from './withBreakpoints';
 import setShouldRender from '../util/set-should-render';
 import PropTypes from '../util/shared-propTypes';
 
@@ -34,6 +34,4 @@ HideAt.defaultProps = {
   children: null,
 };
 
-const HideAtWithBreakpoint = withBreakpoints(HideAt);
-
-export default HideAtWithBreakpoint;
+export default withBreakpoints(HideAt);
