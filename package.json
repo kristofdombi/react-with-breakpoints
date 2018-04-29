@@ -73,7 +73,7 @@
     "node-sass": "^4.5.3",
     "normalize-scss": "^7.0.0",
     "react-collapsible": "^2.0.3",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.3.2",
     "react-test-renderer": "^16.2.0",
     "react-view-pager": "^0.5.1",
     "react-view-slider": "^3.0.1",
@@ -85,7 +85,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2"
   }
 }
