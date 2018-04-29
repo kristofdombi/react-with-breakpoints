@@ -3,7 +3,7 @@ import { withBreakpoints } from './withBreakpoints';
 import setShouldRender from '../util/set-should-render';
 import PropTypes from '../util/shared-propTypes';
 
-function ShowAt({ breakpoint, currentBreakpoint, children }) {
+export function ShowAt({ breakpoint, currentBreakpoint, children }) {
   let shouldRender;
 
   switch (currentBreakpoint) {

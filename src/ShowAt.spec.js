@@ -1,7 +1,10 @@
 import assert from 'assert';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
-import ShowAt from './ShowAt';
+import { ShowAt } from './ShowAt';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('<ShowAt />', () => {
   it('allows us to set props', () => {
