@@ -19,7 +19,7 @@ function HideAt({ breakpoint, currentBreakpoint, children }) {
   }
 
   if (shouldRender) {
-    return (<div>{ children }</div>);
+    return (<React.Fragment>{ children }</React.Fragment>);
   }
   return null;
 }
