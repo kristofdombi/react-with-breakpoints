@@ -4,7 +4,7 @@ import airbnbBreakpoints from '../util/airbnb-breakpoints';
 
 const Context = React.createContext();
 
-export const withBreakpointsContext = (WrappedComponent) => {
+export const withBreakpoints = (WrappedComponent) => {
   const Component = (props) => (
     <Context.Consumer>
       { payload => (
