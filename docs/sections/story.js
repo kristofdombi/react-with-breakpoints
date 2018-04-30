@@ -2,7 +2,8 @@ import React from 'react';
 import { func } from 'prop-types';
 import { Heading1 } from '../components/headings';
 import Button from '../components/button';
-import { ShowAt } from '../../src/react-with-breakpoints';
+import Signature from '../components/signature';
+import { ShowAt, HideAt } from '../../src/react-with-breakpoints';
 
 const MyStory = ({ onChange }) => (
   <div className="story section">
@@ -22,6 +23,9 @@ const MyStory = ({ onChange }) => (
         <Button neutral onClick={ () => onChange(2) }>👈 Contribution</Button>
       </div>
     </ShowAt>
+    <HideAt breakpoint="small">
+      <Signature />
+    </HideAt>
   </div>
 );
 

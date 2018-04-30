@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HideAt, ShowAt } from '../src/react-with-breakpoints';
+import { BreakpointsProvider, HideAt, ShowAt } from '../src/react-with-breakpoints';
 import Landing from './sections/landing';
 import Docs from './sections/docs';
 import Contribution from './sections/contribution';
@@ -44,49 +44,51 @@ class App extends React.PureComponent {
 
   render() {
     return (
-      <div className="main-wrapper">
-        <ShowAt breakpoint="small">
-          { this.isIOS
-            ? <ViewPager tag="div">
-              <Frame autoSize="height">
-                <Track
-                  ref={ c => (this.track = c) }
-                  viewsToShow={ 1 }
-                  className="track"
-                  swipe={ false }
-                >
-                  <View className="view">
-                    <Landing onChange={ () => this.handleViewChange(1) } />
-                  </View>
-                  <View className="view">
-                    <Docs
-                      onChange={ nextView => this.handleViewChange(nextView) }
-                    />
-                  </View>
-                  <View className="view">
-                    <Contribution onChange={ nextView => this.handleViewChange(nextView) } />
-                  </View>
-                  <View className="view">
-                    <MyStory onChange={ nextView => this.handleViewChange(nextView) } />
-                  </View>
-                </Track>
-              </Frame>
-            </ViewPager>
-            : <ViewSlider
-              renderView={ this.renderView }
-              numViews={ Object.keys(this.storySet).length }
-              activeView={ this.state.activeView }
-              fillParent
-              />
-          }
-        </ShowAt>
-        <HideAt breakpoint="small">
-          <Landing />
-          <Docs />
-          <Contribution />
-          <MyStory />
-        </HideAt>
-      </div>
+      <BreakpointsProvider>
+        <div className="main-wrapper">
+          <ShowAt breakpoint="small">
+            { this.isIOS
+              ? <ViewPager tag="div">
+                <Frame autoSize="height">
+                  <Track
+                    ref={ c => (this.track = c) }
+                    viewsToShow={ 1 }
+                    className="track"
+                    swipe={ false }
+                  >
+                    <View className="view">
+                      <Landing onChange={ () => this.handleViewChange(1) } />
+                    </View>
+                    <View className="view">
+                      <Docs
+                        onChange={ nextView => this.handleViewChange(nextView) }
+                      />
+                    </View>
+                    <View className="view">
+                      <Contribution onChange={ nextView => this.handleViewChange(nextView) } />
+                    </View>
+                    <View className="view">
+                      <MyStory onChange={ nextView => this.handleViewChange(nextView) } />
+                    </View>
+                  </Track>
+                </Frame>
+              </ViewPager>
+              : <ViewSlider
+                renderView={ this.renderView }
+                numViews={ Object.keys(this.storySet).length }
+                activeView={ this.state.activeView }
+                fillParent
+                />
+            }
+          </ShowAt>
+          <HideAt breakpoint="small">
+            <Landing />
+            <Docs />
+            <Contribution />
+            <MyStory />
+          </HideAt>
+        </div>
+      </BreakpointsProvider>
     );
   }
 }

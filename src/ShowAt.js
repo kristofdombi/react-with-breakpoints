@@ -1,9 +1,9 @@
 import React from 'react';
-import withBreakpoints from './withBreakpoints';
+import { withBreakpoints } from './withBreakpoints';
 import setShouldRender from '../util/set-should-render';
 import PropTypes from '../util/shared-propTypes';
 
-function ShowAt({ breakpoint, currentBreakpoint, children }) {
+export function ShowAt({ breakpoint, currentBreakpoint, children }) {
   let shouldRender;
 
   switch (currentBreakpoint) {
@@ -19,7 +19,7 @@ function ShowAt({ breakpoint, currentBreakpoint, children }) {
   }
 
   if (shouldRender) {
-    return (<div>{ children }</div>);
+    return (<React.Fragment>{ children }</React.Fragment>);
   }
   return null;
 }
@@ -34,6 +34,4 @@ ShowAt.defaultProps = {
   children: null,
 };
 
-const ShowAtWithBreakpoint = withBreakpoints(ShowAt);
-
-export default ShowAtWithBreakpoint;
+export default withBreakpoints(ShowAt);

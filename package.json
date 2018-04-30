@@ -2,7 +2,7 @@
   "name": "react-with-breakpoints",
   "version": "2.0.2",
   "description": "Utility React component for altering the visual experience of responsive and lean webpages.",
-  "main": "dist/react-with-breakpoints.js",
+  "main": "dist/react-with-breakpoints.min.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src",
     "prepublish": "npm run lint && npm run build",
@@ -64,16 +64,17 @@
     "coveralls": "^3.0.0",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^3.19.0",
     "eslint-config-pi": "^13.0.0",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-react": "^6.10.3",
-    "jest": "^21.2.1",
+    "jest": "^22.4.3",
     "node-sass": "^4.5.3",
     "normalize-scss": "^7.0.0",
     "react-collapsible": "^2.0.3",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.3.2",
     "react-test-renderer": "^16.2.0",
     "react-view-pager": "^0.5.1",
     "react-view-slider": "^3.0.1",
@@ -85,7 +86,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1"
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2"
   }
 }

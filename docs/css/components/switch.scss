@@ -1,0 +1,18 @@
+.switch {
+
+  &-button {
+    background-color: #fff;
+    padding: $gutter-base / 2 $gutter-base;
+    border: none;
+    border-radius: $border-radius-base;
+    box-shadow: $box-shadow-base;
+    color: $primary-blue;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+    &--active {
+      background-color: $primary-blue;
+      color: #fff;
+    }
+  }
+}

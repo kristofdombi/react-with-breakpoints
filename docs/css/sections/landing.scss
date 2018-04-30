@@ -29,7 +29,15 @@
   }
 
   .card {
-    margin-bottom: 4 * $gutter-base;
+    margin-bottom: 2 * $gutter-base;
+  }
+
+  .signature {
+    margin-bottom: $gutter-base;
+
+    @media (min-height: 569px) {
+      margin-bottom: 2 * $gutter-base;
+    }
   }
 
   .button {

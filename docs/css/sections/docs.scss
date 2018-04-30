@@ -10,6 +10,35 @@
     margin-bottom: $gutter-base;
   }
 
+  .api-switch {
+    display: flex;
+    align-items: center;
+    margin-bottom: $gutter-base * 2;
+
+    & > p {
+      margin-bottom: 0;
+    }
+
+    .switch {
+      margin-left: auto;
+
+      &-button:not(:last-child) {
+        margin-right: $gutter-base * 1.5;
+      }
+    }
+
+    @media (min-width: 369px) {
+
+      .switch {
+        margin-left: $gutter-base * 2;
+
+        &-button:not(:last-child) {
+          margin-right: $gutter-base * 2;
+        }
+      }
+    }
+  }
+
   .component-list {
     margin-bottom: 2 * $gutter-base;
 

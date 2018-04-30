@@ -9,7 +9,10 @@
 
 > Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
-📖 [Documenation page](https://kristof0425.github.io/react-with-breakpoints/)
+📖 [Documentation page](https://kristof0425.github.io/react-with-breakpoints/)
+
+**NOTE:**
+👆 If you'd like to access v2 docs, please check out the documentation page above!
 
 ## 🔧 Install
 
@@ -24,44 +27,62 @@ yarn add react-with-breakpoints
 ## 👈 Usage
 
 ```jsx
-import { ShowAt, HideAt } from 'react-with-breakpoints';
+// in index.js
+import { BreakpointsProvider } from 'react-with-breakpoints';
 
 const myApp = () => (
-  <div>
-    <ShowAt breakpoint="mediumAndBelow">
-      <div>Hello World!</div>
-    </ShowAt>
-    <HideAt breakpoint="mediumAndBelow">
-      <div>Hola Mundo!</div>
-    </HideAt>
-  </div>
+  <BreakpointsProvider>
+    <App />
+  </BreakpointsProvider>
+);
+
+// in App.js
+import { ShowAt, HideAt } from 'react-with-breakpoints';
+
+const App = () => (
+  <ShowAt breakpoint="mediumAndBelow">
+    <div>Hello World!</div>
+  </ShowAt>
+  <HideAt breakpoint="mediumAndBelow">
+    <div>Hola Mundo!</div>
+  </HideAt>
 );
 ```
 
 ## ⚡️ Component list
-- `withBreakpoints`
+- `<BreakpointsProvider />`
 - `<HideAt />`
 - `<ShowAt />`
 
-### `withBreakpoints`
+### `<BreakpointsProvider />`
 
-It’s a [HOC](https://reactjs.org/docs/higher-order-components.html) (higher order component), responsible for adding the scroll event listener and passing down the current breakpoint as a prop to its child.
+BreakpointsProvider is taking advantage of the new React v16.3 Context API. It is a context provider and therefore it needs to be rendered on the top of your component tree. For more information about React v16.3's Context API please visit [this link](https://reactjs.org/docs/context.html).
 
 See in an example how you can use it:
 
 ```jsx
-import { withBreakpoints } from 'react-with-breakpoints';
+// in index.js
+import { BreakpointsProvider } from 'react-with-breakpoints';
 
-// just like in the source of HideAt,
-// you can put any component
-// as an argument of withBreakpoints
+const breakpoints = {
+  small: 468,
+  medium: 768,
+  large: 1024
+}
 
-const HelloWorld = () => <div>Hello World!</div>;
-
-const helloWithBreakpoints = withBreakpoints(HelloWorld);
-
-export default helloWithBreakpoints;
+const myApp = () => (
+  <BreakpointsProvider breakpoints={ breakpoints }> // breakpoints prop is optional
+    <App />
+  </BreakpointsProvider>
+);
 ```
+
+**NOTE:**
+As you can see in the example above, the `breakpoints` prop has been moved from HideAt and ShowAt to the BreakpointsProvider component. There is a disadvantage and an advantage of this. You can finally modify the breakpoints object at one place in your app, it became centralised. The disadvantage is that now you need to refactor your code if you manually set the breakpoints in your project if you used v2.
+
+| Prop name | Type | Value | Default value | Description | Required |
+| --------- | ---- | ----- | ------------- | ----------- | -------- |
+| `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
 
 ### `<HideAt />`
 
@@ -79,7 +100,7 @@ const myApp = () => (
 );
 ```
 
-Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen wdith described as a text eg.: small) from withBreakpoints.
+Here, the div with the ‘Hello World!’ text is going to appear only if you are viewing your website on a medium or larger sized screen. It’ll be hidden and removed from the DOM on small screen width. HideAt gets the current breakpoint (screen width described as a text eg.: small) from BreakpointsProvider.
 
 **NOTE:**
 As HideAt and ShowAt function the same way (they do the opposite things of each other), they share the same props and prop-types.
@@ -87,7 +108,6 @@ As HideAt and ShowAt function the same way (they do the opposite things of each 
 | Prop name | Type | Value | Default value | Description | Required |
 | --------- | ---- | ----- | ------------- | ----------- | -------- |
 | `breakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
-| `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
 | `currentBreakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'large'` | - | It's used by withBreakpoints. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
 
 ### `<ShowAt />`
@@ -113,7 +133,7 @@ Although all kinds of contributions are welcome, I wouldn't mind having a system
 
 1. If you find something, that bothers you about these modules, or you could improve them, please submit a new issue [here](https://github.com/kristof0425/react-with-breakpoints/issues).
 2. Fork react-with-breakpoints repository and create your changes in your repository.
-3. Create a pull request with the appropriate issue’s number you created (or you found solveable) and put **Review needed** label on it, if you feel like done with your work.
+3. Create a pull request with the appropriate issue’s number you created (or you found solvable) and put **Review needed** label on it, if you feel like done with your work.
 
 After this I'll review it personally and hopefully merge it as well.
 
