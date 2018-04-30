@@ -64,6 +64,7 @@ class Docs extends React.PureComponent {
             >v3</Switch.Button>
           </Switch>
         </div>
+
         <Card title="Usage">
           <Code>
             import { '{ ' }<BlueSyntax>ShowAt</BlueSyntax>, <BlueSyntax>HideAt</BlueSyntax>{ ' }' } from '<OrangeSyntax>react-with-breakpoints</OrangeSyntax>';<br />
@@ -78,6 +79,7 @@ class Docs extends React.PureComponent {
             );
           </Code>
         </Card>
+
         <div className="component-list">
           <Heading2>Component list</Heading2>
           <ul>
@@ -86,6 +88,7 @@ class Docs extends React.PureComponent {
             <li><a href="#show-at"><Snippet>{ '<ShowAt />' }</Snippet></a></li>
           </ul>
         </div>
+
         <div id="with-breakpoints" className="withBreakpoints">
           <Heading2>withBreakpoints</Heading2>
           <p>It’s a <a href="https://reactjs.org/docs/higher-order-components.html" target="_blank" rel="noopener noreferrer">HOC</a> (higher order component), responsible for adding the scroll event listener and passing down the current breakpoint as a prop to its child.</p>
@@ -106,6 +109,7 @@ class Docs extends React.PureComponent {
             </Code>
           </Card>
         </div>
+
         <div id="hide-at" className="HideAt">
           <Heading2>HideAt</Heading2>
           <p>HideAt is a stateless function, which helps you make your DOM leaner. It hides its children, when the proper criterias are met.</p>
@@ -206,6 +210,7 @@ class Docs extends React.PureComponent {
             </Collapsible>
           </Card>
         </div>
+
         <div id="show-at" className="ShowAt">
           <Heading2>ShowAt</Heading2>
           <p>ShowAt functions the opposite way as HideAt does. It reveals its children when the current breakpoint matches its breakpoint. (eg.: small, smallAndBelow)</p>
@@ -222,6 +227,7 @@ class Docs extends React.PureComponent {
             </Code>
           </Card>
         </div>
+
         <ShowAt breakpoint="small">
           <div className="button-wrapper">
             <Button neutral onClick={ () => onChange(0) }>👈 Installation</Button>
