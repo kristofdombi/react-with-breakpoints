@@ -1,6 +1,11 @@
 .story {
+  margin-bottom: 20px;
 
   .socials > a:first-child {
     margin-right: $gutter-base * 2;
+  }
+
+  .signature {
+    margin-top: 40px;
   }
 }
