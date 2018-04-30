@@ -23,7 +23,18 @@
       margin-left: auto;
 
       &-button:not(:last-child) {
-        margin-right: $gutter-base;
+        margin-right: $gutter-base * 1.5;
+      }
+    }
+
+    @media (min-width: 369px) {
+
+      .switch {
+        margin-left: $gutter-base * 2;
+
+        &-button:not(:last-child) {
+          margin-right: $gutter-base * 2;
+        }
       }
     }
   }
