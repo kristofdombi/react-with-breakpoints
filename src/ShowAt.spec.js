@@ -37,9 +37,27 @@ describe('<ShowAt />', () => {
     assert.deepStrictEqual($.children().exists(), false);
   });
 
+  it('doesn\'t render its child if breakpoint is largeAndBelow and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <ShowAt breakpoint="largeAndBelow" currentBreakpoint="xlarge">
+        <div>Hello</div>
+      </ShowAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), false);
+  });
+
   it('doesn\'t render its child if breakpoint is large and currentBreakpoint is medium', () => {
     const $ = mount((
       <ShowAt breakpoint="large" currentBreakpoint="medium">
+        <div>Hello</div>
+      </ShowAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), false);
+  });
+
+  it('doesn\'t render its child if breakpoint is xlarge and currentBreakpoint is large', () => {
+    const $ = mount((
+      <ShowAt breakpoint="xlarge" currentBreakpoint="large">
         <div>Hello</div>
       </ShowAt>
     ));
@@ -55,9 +73,27 @@ describe('<ShowAt />', () => {
     assert.deepStrictEqual($.children().exists(), true);
   });
 
+  it('shows its children if breakpoint is xlarge and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <ShowAt breakpoint="xlarge" currentBreakpoint="xlarge">
+        <div>Hello</div>
+      </ShowAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), true);
+  });
+
   it('shows its children if breakpoint is mediumAndAbove and currentBreakpoint is large', () => {
     const $ = mount((
       <ShowAt breakpoint="mediumAndAbove" currentBreakpoint="large">
+        <div>Hello</div>
+      </ShowAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), true);
+  });
+
+  it('shows its children if breakpoint is largeAndAbove and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <ShowAt breakpoint="largeAndAbove" currentBreakpoint="xlarge">
         <div>Hello</div>
       </ShowAt>
     ));
