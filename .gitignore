@@ -13,3 +13,4 @@ lib
 
 # Coveralls
 coverage
+.vscode
