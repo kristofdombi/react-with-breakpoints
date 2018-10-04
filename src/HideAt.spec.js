@@ -37,9 +37,27 @@ describe('<HideAt />', () => {
     assert($.contains(<div>Hello</div>), true);
   });
 
+  it('renders its children if breakpoint is largeAndBelow and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <HideAt breakpoint="largeAndBelow" currentBreakpoint="xlarge">
+        <div>Hello</div>
+      </HideAt>
+    ));
+    assert($.contains(<div>Hello</div>), true);
+  });
+
   it('renders its children if breakpoint is large and currentBreakpoint is medium', () => {
     const $ = mount((
       <HideAt breakpoint="large" currentBreakpoint="medium">
+        <div>Hello</div>
+      </HideAt>
+    ));
+    assert($.contains(<div>Hello</div>), true);
+  });
+
+  it('renders its children if breakpoint is large and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <HideAt breakpoint="large" currentBreakpoint="xlarge">
         <div>Hello</div>
       </HideAt>
     ));
@@ -55,9 +73,36 @@ describe('<HideAt />', () => {
     assert.deepStrictEqual($.children().exists(), false);
   });
 
+  it('hides its children if breakpoint is xlarge and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <HideAt breakpoint="xlarge" currentBreakpoint="xlarge">
+        <div>Hello</div>
+      </HideAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), false);
+  });
+
   it('hides its children if breakpoint is mediumAndAbove and currentBreakpoint is large', () => {
     const $ = mount((
       <HideAt breakpoint="mediumAndAbove" currentBreakpoint="large">
+        <div>Hello</div>
+      </HideAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), false);
+  });
+
+  it('hides its children if breakpoint is mediumAndAbove and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <HideAt breakpoint="mediumAndAbove" currentBreakpoint="xlarge">
+        <div>Hello</div>
+      </HideAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), false);
+  });
+
+  it('hides its children if breakpoint is largeAndAbove and currentBreakpoint is xlarge', () => {
+    const $ = mount((
+      <HideAt breakpoint="largeAndAbove" currentBreakpoint="xlarge">
         <div>Hello</div>
       </HideAt>
     ));

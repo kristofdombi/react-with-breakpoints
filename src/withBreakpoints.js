@@ -31,6 +31,7 @@ export default class BreakpointsProvider extends PureComponent {
       small: PropTypes.number.isRequired,
       medium: PropTypes.number.isRequired,
       large: PropTypes.number.isRequired,
+      xlarge: PropTypes.number.isRequired,
     }),
     children: PropTypes.node,
   };
@@ -63,9 +64,13 @@ export default class BreakpointsProvider extends PureComponent {
       this.setState({
         currentBreakpoint: 'medium',
       });
-    } else if (clientWidth <= breakpoints.large || clientWidth > breakpoints.large) {
+    } else if (clientWidth < breakpoints.large) {
       this.setState({
         currentBreakpoint: 'large',
+      });
+    } else if (clientWidth <= breakpoints.xlarge || clientWidth > breakpoints.xlarge) {
+      this.setState({
+        currentBreakpoint: 'xlarge',
       });
     }
   }

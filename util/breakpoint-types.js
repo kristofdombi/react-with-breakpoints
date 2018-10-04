@@ -3,5 +3,8 @@ export default [
   'medium',
   'mediumAndBelow',
   'mediumAndAbove',
-  'large'
+  'large',
+  'largeAndBelow',
+  'largeAndAbove',
+  'xlarge'
 ];
