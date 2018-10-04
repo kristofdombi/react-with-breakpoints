@@ -173,7 +173,9 @@ class Docs extends React.PureComponent {
                 <br />
                 &nbsp;&nbsp;<BlueSyntax>medium</BlueSyntax>: 768,
                 <br />
-                &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: 1024
+                &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: 1024,
+                <br />
+                &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: Infinity,
                 <br />
                 }
                 <br />
@@ -205,6 +207,8 @@ class Docs extends React.PureComponent {
                       <br />
                       &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: Number
                       <br />
+                      &nbsp;&nbsp;<BlueSyntax>xlarge</BlueSyntax>: Number
+                      <br />
                       {'}'}
                     </Code>
                   </Row>
@@ -217,7 +221,9 @@ class Docs extends React.PureComponent {
                       <br />
                       &nbsp;&nbsp;<BlueSyntax>medium</BlueSyntax>: 1128
                       <br />
-                      &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: <Snippet>Infinity</Snippet>
+                      &nbsp;&nbsp;<BlueSyntax>large</BlueSyntax>: 1440
+                      <br />
+                      &nbsp;&nbsp;<BlueSyntax>xlarge</BlueSyntax>: <Snippet>Infinity</Snippet>
                       <br />
                       {'}'}
                     </Code>
@@ -282,6 +288,7 @@ class Docs extends React.PureComponent {
                     <Snippet>"small"</Snippet>
                     <Snippet>"medium"</Snippet>
                     <Snippet>"large"</Snippet>
+                    <Snippet>"xlarge"</Snippet>
                   </div>
                 </Row>
                 <Row title="Description:">

@@ -67,7 +67,8 @@ import { BreakpointsProvider } from 'react-with-breakpoints';
 const breakpoints = {
   small: 468,
   medium: 768,
-  large: 1024
+  large: 1024,
+  xlarge: Infinity,
 }
 
 const myApp = () => (
@@ -82,7 +83,7 @@ As you can see in the example above, the `breakpoints` prop has been moved from 
 
 | Prop name | Type | Value | Default value | Description | Required |
 | --------- | ---- | ----- | ------------- | ----------- | -------- |
-| `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
+| `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number, xlarge: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: 1440, xlarge: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
 
 ### `<HideAt />`
 
@@ -107,8 +108,8 @@ As HideAt and ShowAt function the same way (they do the opposite things of each 
 
 | Prop name | Type | Value | Default value | Description | Required |
 | --------- | ---- | ----- | ------------- | ----------- | -------- |
-| `breakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
-| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'large'` | - | It's used by withBreakpoints. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
+| `breakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'`, `'xlarge'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
+| `currentBreakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'large'`, `'xlarge'` | - | It's used by withBreakpoints. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
 
 ### `<ShowAt />`
 
