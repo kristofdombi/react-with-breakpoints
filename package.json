@@ -1,6 +1,6 @@
 {
   "name": "react-with-breakpoints",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Utility React component for altering the visual experience of responsive and lean webpages.",
   "main": "dist/react-with-breakpoints.min.js",
   "scripts": {
