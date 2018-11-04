@@ -8,11 +8,10 @@ const Context = React.createContext();
 const debounce = (func, interval) => {
   let timeout;
   return (...args) => {
-    const context = this;
-    let later = () => {
+    const later = () => {
       timeout = null;
-      func.apply(context, args);
-    }
+      func.apply(this, args);
+    };
     clearTimeout(timeout);
     timeout = setTimeout(later, interval);
   };
