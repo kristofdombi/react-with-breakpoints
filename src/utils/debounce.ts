@@ -7,7 +7,7 @@ const debounce = (func: Function, interval: number) => {
       timeout = null
       func.apply(this, args)
     }
-    clearTimeout(timeout as Timeout)
+    clearTimeout(timeout)
     timeout = setTimeout(later, interval)
   }
 }
