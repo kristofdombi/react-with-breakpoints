@@ -12,7 +12,7 @@ const libraryName = 'react-with-breakpoints'
 
 // const isProduction = process.env.NODE_ENV === 'production';
 
-export default async () => ({
+export default () => ({
   input: `src/${libraryName}.ts`,
   output: [
     { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true },
