@@ -9,11 +9,6 @@
 
 > Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
-📖 [Documentation page](https://kristof0425.github.io/react-with-breakpoints/)
-
-**NOTE:**
-👆 If you'd like to access v2 docs, please check out the documentation page above!
-
 ## 🔧 Install
 
 ```bash
@@ -25,6 +20,9 @@ yarn add react-with-breakpoints
 ```
 
 ## 👈 Usage
+
+**NOTE:** If you'd like to access v3 docs, please check the `v3` branch!<br /> 
+Beware that, `react-with-breakpoints` v4 depends on React Hooks, which were released with `react@16.8.0`. v3 is still maintained. 
 
 ```jsx
 // in index.js
