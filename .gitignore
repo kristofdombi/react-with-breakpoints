@@ -4,12 +4,16 @@
 .Spotlight-V100
 .AppleDouble
 .LSOverride
+.rpt2_cache
 
 # NPM
 node_modules
 npm-debug.log
 dist
 lib
+
+# Editor
+.idea
 
 # Coveralls
 coverage
