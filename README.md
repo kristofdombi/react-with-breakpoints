@@ -9,10 +9,8 @@
 
 > Build leaner webpages with `react-with-breakpoints` like Airbnb. 👌
 
-📖 [Documentation page](https://kristof0425.github.io/react-with-breakpoints/)
-
 **NOTE:**
-👆 If you'd like to access v2 docs, please check out the documentation page above!
+If you have `react@16.8.x` installed, using `react-with-breakpoints` v4 is recommended as it's written with React Hooks and Typescript. 
 
 ## 🔧 Install
 
