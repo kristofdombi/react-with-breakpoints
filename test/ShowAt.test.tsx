@@ -128,4 +128,24 @@ describe('<ShowAt />', () => {
     )
     expect($.contains(child)).toBe(true)
   })
+
+  it('shows its children if breakpoint is largeAndBelow and currentBreakpoint is medium', () => {
+    resizeWindow(breakpoints.medium)
+    const $ = mount(
+      <BreakpointsProvider>
+        <ShowAt breakpoint="largeAndBelow">{child}</ShowAt>
+      </BreakpointsProvider>
+    )
+    expect($.contains(child)).toBe(true)
+  })
+
+  it('shows its children if breakpoint is largeAndBelow and currentBreakpoint is small', () => {
+    resizeWindow(breakpoints.small)
+    const $ = mount(
+      <BreakpointsProvider>
+        <ShowAt breakpoint="largeAndBelow">{child}</ShowAt>
+      </BreakpointsProvider>
+    )
+    expect($.contains(child)).toBe(true)
+  })
 })

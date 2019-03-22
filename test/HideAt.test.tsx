@@ -162,4 +162,28 @@ describe('<HideAt />', () => {
     )
     expect($.contains(child)).toBe(false)
   })
+
+  it('hides its children breakpoint is largeAndBelow and currentBreakpoint is medium', () => {
+    resizeWindow(breakpoints.medium)
+    const $ = mount(
+      <BreakpointsProvider>
+        <HideAt breakpoint="largeAndBelow">
+          { child }
+        </HideAt>
+      </BreakpointsProvider>
+    )
+    expect($.contains(child)).toBe(false)
+  })
+
+  it('hides its children breakpoint is largeAndBelow and currentBreakpoint is small', () => {
+    resizeWindow(breakpoints.small)
+    const $ = mount(
+      <BreakpointsProvider>
+        <HideAt breakpoint="largeAndBelow">
+          { child }
+        </HideAt>
+      </BreakpointsProvider>
+    )
+    expect($.contains(child)).toBe(false)
+  })
 })
