@@ -8,11 +8,15 @@ function useBreakpoint(breakpoint: BreakpointEdge, isHideAt?: Boolean): Boolean 
 
   switch (currentBreakpoint) {
     case 'small':
-      shouldRender = setShouldRender(['small', 'mediumAndBelow'], breakpoint, isHideAt)
+      shouldRender = setShouldRender(
+        ['small', 'mediumAndBelow', 'largeAndBelow'],
+        breakpoint,
+        isHideAt
+      )
       break
     case 'medium':
       shouldRender = setShouldRender(
-        ['medium', 'mediumAndAbove', 'mediumAndBelow'],
+        ['medium', 'mediumAndAbove', 'mediumAndBelow', 'largeAndBelow'],
         breakpoint,
         isHideAt
       )
