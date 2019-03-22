@@ -8,10 +8,10 @@ export function ShowAt({ breakpoint, currentBreakpoint, children }) {
 
   switch (currentBreakpoint) {
     case 'small':
-      shouldRender = setShouldRender(['small', 'mediumAndBelow'], breakpoint, false);
+      shouldRender = setShouldRender(['small', 'mediumAndBelow', 'largeAndBelow'], breakpoint, false);
       break;
     case 'medium':
-      shouldRender = setShouldRender(['medium', 'mediumAndAbove', 'mediumAndBelow'], breakpoint, false);
+      shouldRender = setShouldRender(['medium', 'mediumAndAbove', 'mediumAndBelow', 'largeAndBelow'], breakpoint, false);
       break;
     case 'large':
       shouldRender = setShouldRender(['mediumAndAbove', 'large', 'largeAndBelow', 'largeAndAbove'], breakpoint, false);

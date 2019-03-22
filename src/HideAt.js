@@ -8,10 +8,10 @@ export function HideAt({ breakpoint, currentBreakpoint, children }) {
 
   switch (currentBreakpoint) {
     case 'small':
-      shouldRender = setShouldRender(['small', 'mediumAndBelow'], breakpoint);
+      shouldRender = setShouldRender(['small', 'mediumAndBelow', 'largeAndBelow'], breakpoint);
       break;
     case 'medium':
-      shouldRender = setShouldRender(['medium', 'mediumAndAbove', 'mediumAndBelow'], breakpoint);
+      shouldRender = setShouldRender(['medium', 'mediumAndAbove', 'mediumAndBelow', 'largeAndBelow'], breakpoint);
       break;
     case 'large':
       shouldRender = setShouldRender(['mediumAndAbove', 'large', 'largeAndBelow', 'largeAndAbove'], breakpoint);
