@@ -117,4 +117,22 @@ describe('<ShowAt />', () => {
     ));
     assert.deepStrictEqual($.children().exists(), true);
   });
+
+  it('shows its children if breakpoint is largeAndBelow and currentBreakpoint is medium', () => {
+    const $ = mount((
+      <ShowAt breakpoint="largeAndBelow" currentBreakpoint="medium">
+        <div>Hello</div>
+      </ShowAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), true);
+  });
+
+  it('shows its children if breakpoint is largeAndBelow and currentBreakpoint is small', () => {
+    const $ = mount((
+      <ShowAt breakpoint="largeAndBelow" currentBreakpoint="small">
+        <div>Hello</div>
+      </ShowAt>
+    ));
+    assert.deepStrictEqual($.children().exists(), true);
+  });
 });
