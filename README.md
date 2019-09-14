@@ -81,7 +81,8 @@ As you can see in the example above, the `breakpoints` prop has been moved from 
 
 | Prop name | Type | Value | Default value | Description | Required |
 | --------- | ---- | ----- | ------------- | ----------- | -------- |
-| `breakpoints` | `Object` | `{ small: Number, medium: Number, large: Number, xlarge: Number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: 1440, xlarge: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
+| `breakpoints` | `Object` | `{ small: number, medium: number, large: number, xlarge: number }` | See it at [util/airbnbBreakpoints](util/airbnb-breakpoints.js): `{ small: 744, medium: 1128, large: 1440, xlarge: Infinity }` | Here you can override the default Airbnb breakpoints. It needs to be an object with a strict shape, which is shown at the value row. | `false` |
+| `onBreakpointChange` | `Function` | `(breakpoint: Breakpoint) => void` | `-` | Callback invoked on breakpoint change. | `false` |
 
 ### `<HideAt />`
 
