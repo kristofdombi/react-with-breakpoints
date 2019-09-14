@@ -1,5 +1,8 @@
 import * as React from 'react'
-import { BreakpointEdge, Context, setShouldRender } from './index'
+
+import { BreakpointEdge } from './breakpoint-types'
+import Context from './context'
+import setShouldRender from './set-should-render'
 
 function useBreakpoint(breakpoint: BreakpointEdge, isHideAt?: Boolean): Boolean {
   const { currentBreakpoint } = React.useContext(Context)
