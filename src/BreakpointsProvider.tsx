@@ -11,10 +11,14 @@ type Breakpoints = {
 
 interface BreakpointsProviderProps {
   breakpoints?: Breakpoints
-  children?: React.ReactNode
+  onBreakpointChange?: (breakpoint: Breakpoint) => void
 }
 
-const BreakpointsProvider = ({ breakpoints, children }: BreakpointsProviderProps) => {
+const BreakpointsProvider: React.FC<BreakpointsProviderProps> = ({
+  breakpoints,
+  onBreakpointChange,
+  children
+}) => {
   const [currentBreakpoint, setCurrentBreakpoint] = React.useState('' as Breakpoint)
 
   React.useLayoutEffect(() => {
@@ -27,6 +31,12 @@ const BreakpointsProvider = ({ breakpoints, children }: BreakpointsProviderProps
       window.removeEventListener('resize', debouncedResize)
     }
   }, [])
+
+  React.useEffect(() => {
+    if (onBreakpointChange) {
+      onBreakpointChange(currentBreakpoint)
+    }
+  }, [currentBreakpoint])
 
   const handleResize = () => {
     const clientWidth = window.innerWidth
