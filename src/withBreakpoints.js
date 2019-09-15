@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import airbnbBreakpoints from '../util/airbnb-breakpoints';
 
-const Context = React.createContext();
+export const Context = React.createContext();
 
 // debouncing function for kristof0425/react-with-breakpoints/29
 const debounce = (func, interval) => {
@@ -61,6 +61,15 @@ export default class BreakpointsProvider extends PureComponent {
     const debouncedResize = debounce(this.handleResize, 50);
     window.addEventListener('resize', debouncedResize, { passive: true });
     this.handleResize();
+  }
+
+  componentDidUpdate(_, prevState) {
+    const { onBreakpointChange } = this.props
+    const { currentBreakpoint } = this.state
+
+    if (currentBreakpoint !== prevState.currentBreakpoint && onBreakpointChange) {
+      onBreakpointChange(currentBreakpoint)
+    }
   }
 
   componentWillUnmount() {
