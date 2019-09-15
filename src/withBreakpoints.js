@@ -46,6 +46,7 @@ export default class BreakpointsProvider extends PureComponent {
       large: PropTypes.number.isRequired,
       xlarge: PropTypes.number.isRequired,
     }),
+    onBreakpointChange: PropTypes.func,
     children: PropTypes.node,
   };
 
@@ -64,11 +65,11 @@ export default class BreakpointsProvider extends PureComponent {
   }
 
   componentDidUpdate(_, prevState) {
-    const { onBreakpointChange } = this.props
-    const { currentBreakpoint } = this.state
+    const { onBreakpointChange } = this.props;
+    const { currentBreakpoint } = this.state;
 
     if (currentBreakpoint !== prevState.currentBreakpoint && onBreakpointChange) {
-      onBreakpointChange(currentBreakpoint)
+      onBreakpointChange(currentBreakpoint);
     }
   }
 
