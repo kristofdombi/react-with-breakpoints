@@ -11,5 +11,8 @@ npm-debug.log
 dist
 lib
 
+.idea
+.rpt2_cache
+
 # Coveralls
 coverage
