@@ -107,7 +107,7 @@ As HideAt and ShowAt function the same way (they do the opposite things of each 
 
 | Prop name | Type | Value | Default value | Description | Required |
 | --------- | ---- | ----- | ------------- | ----------- | -------- |
-| `breakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'`, `'xlarge'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
+| `breakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'mediumAndBelow'`, `'mediumAndAbove'`, `'large'`, `'largeAndBelow'`, `'largeAndAbove'`, `'xlarge'` | - | You can set either one of the values to tell the component where to hide or show its children. | `true` |
 | `currentBreakpoint` | `String` | Either one of these: `'small'`, `'medium'`, `'large'`, `'xlarge'` | - | It's used by withBreakpoints. Whenever there is a change with the breakpoints, the appropriate value will be passed down to HideAt or ShowAt. | `false` |
 
 ### `<ShowAt />`
